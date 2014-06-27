@@ -1,0 +1,318 @@
+body {
+	margin:0;
+	padding:0;
+	font-family:Segoe UI, Sans-Serif;
+	overflow-x:hidden;
+	color:#444444;
+	background-image:url('images/background.png');
+	background-repeat:repeat-y;
+	background-position:top left;
+}
+	#login_box {
+		margin:auto;
+		width:300px;
+	}
+		ul#mois {margin:0; padding:0; list-style:none; width:115px; height:28px; display:block; background-image:url('images/spinner.png');}
+		ul#mois li {line-height:28px; list-style:inside none; padding:0; float:left; display:block; position:relative;}
+		ul#mois li:hover {display:block;}
+		ul#mois li a {color:#909090; text-decoration:none; display:block; position:relative; height:28px; width:115px; padding-left:10px; padding-right:8px;}
+		ul#mois li a:hover {color:#5fc9f0;}
+		ul#mois li > ul {display:none; width:75px; position:absolute; background-color:#f9f9f9; text-align:left; border-radius:0px 0px 3px 3px; border-bottom:2px solid #d8d8d8;}
+		ul#mois li:hover > ul {display:block;}
+		ul#mois li > ul li {height:28px; width:97px; line-height:28px; font-size:18px; margin-left:-40px; padding:0;}
+		ul#mois li > ul li a {font-size:15px; width:100%;}
+		ul#mois li:hover > ul li a:hover {color:#ffffff; background-color:#a0a0a0}
+
+
+	/* Design page ajouter */
+
+
+/* CAS GENARAUX */
+th, td {padding:2px 10px 2px 15px;}
+select {width:160px; height:26px; outline-color:#6cb9ea; font-size:14px;}
+input {outline-color:#6cb9ea;}
+input[type="submit"] {
+	width:auto;
+	height:26px;
+	padding:0 20px;
+	font-size:14px;
+	border:none;
+	background-color:#e5e5e5;
+	color:#333333;
+	cursor:pointer;
+	border:2px solid #e5e5e5;
+}
+input[type="submit"]:hover {
+	background-color:#d5d5d5;
+	color:#ffffff;
+	-webkit-transition: all .4s ease-in;
+	-moz-transition: all .4s ease-in;
+	-o-transition: all .4s ease-in;
+	transition: all .4s ease-in;
+}
+input[type=checkbox]#slideBox {
+	visibility:hidden;
+}
+a {
+	color:#76afd4;
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:underline;
+}
+.color_credit {color:#11c71e;}
+.color_debit {color:#ce2020;}
+
+/******* CAS SPECIFIQUES *******/
+#menu {width:100%; height:40px; background-color:#37a3e8; margin-top:0px; position:relative; z-index:1000; border-bottom:2px solid #2e84bb; border-radius:0 0 3px 3px;}
+#menu li {width:auto; height:40px; list-style:none; display:inline-block; padding:0 8px 0 8px;}
+#menu li:first-child {width:180px; padding:0 12px 0 12px;}
+#menu li:hover {background-color:#0078d1;}
+#menu li a {height:40px; width:100%; line-height:40px; color:#ffffff; text-decoration:none; text-align:left; display:inline-block; padding-left:5px; padding-right:5px;}
+#menu li a:hover {color:#c0fffd;}
+#menu li a span#imgMenu {width:26px; height:40px; bottom:2px; position:relative; display:inline-block; vertical-align:middle; border:none; margin-right:8px;}
+#menu li a span#imgMenu img {width:26px; height:26px; position:absolute; top:7px; left:0;}
+#menu li a span#imgMenuPlus {width:11px; height:8px; bottom:8px; position:relative; display:inline-block; vertical-align:middle; border:none; margin-left:8px;}
+#menu li a span#imgMenuPlus img {width:11px; height:8px; position:absolute; top:7px; left:0;}
+/* sous menu */
+#menu li ul {display:none; width:90px; list-style:none; border-radius:0px 0px 3px 3px; border-bottom:2px solid #00528e; border-top:2px solid #0078d1; margin-left:-8px;}
+#menu li:hover ul {display:block; background-color:#0078d1; position:absolute;}
+#menu li ul li, #menu li ul li:first-child {width:130px; margin:0 0 0 -40px; padding:0; height:30px; line-height:30px;}
+#menu li ul li a {height:30px; line-height:30px; width:100%; display:inline-block; text-align:left; font-size:15px;}
+#menu li:hover ul li:hover {background-color:#4db6f9;}
+#barLeft {
+	width:250px;
+	top:0;
+	left:0;
+	bottom:0;
+	position:absolute;
+	background-color:#f3f3f3;
+	z-index:3;
+}
+	#barLeft-content {
+		width:200px;
+		margin-top:50px;
+	}
+		#barLeft-content form {
+			margin:60px 0 0 10px;
+		}
+			#barLeft-content input[type="text"] {
+				height:26px;
+			}
+#content {
+	margin:15px 0 0 260px;
+}
+	#message {
+		width:400px;
+		min-height:40px;
+		padding:15px;
+		margin-bottom:30px;
+	}
+		.bad {
+			background-color:#dfdfdf;
+			color:#333333;
+		}
+		.good {
+			background-color:#1ebaed;
+			color:#ffffff;
+		}
+	.conteneur_options {
+		
+	}
+	tr#tHeader {
+		font-size:18px;
+		background-color:#f3f3f3;
+	}
+	#tList {
+		width:750px;
+		margin:15px 0 15px 0;
+	}
+		#tList tr#tHeader:hover {
+			background-color:#f3f3f3;
+			color:#444444;
+		}
+		#tList tr.impair {
+			background-color:#f9f9f9;
+		}
+		#tList tr:hover {
+			background-color:#f0f0f0;
+			color:#888888;
+		}
+			#tList tr .edit {
+				width:16px;
+				height:16px;
+				background-image:url('images/edit.png');
+			}
+				#tList tr .edit a {
+					width:16px;
+					height:16px;
+				}
+			#tList tr:hover .edit {
+				width:16px;
+				height:16px;
+				background-image:url('images/edit_hover.png');
+			}
+			#tList tr .del {
+				width:16px;
+				height:15px;
+				background-image:url('images/del.png');
+			}
+				#tList tr .del a {
+					width:16px;
+					height:15px;
+				}
+			#tList tr:hover .del {
+				width:16px;
+				height:15px;
+				background-image:url('images/del_hover.png');
+			}
+			#tList tr .newcom {
+				width:16px;
+				height:15px;
+				background-image:url('images/add_com.png');
+			}
+				#tList tr .newcom a {
+					width:16px;
+					height:15px;
+				}
+			#tList tr:hover .newcom {
+				width:16px;
+				height:15px;
+				background-image:url('images/add_com_hover.png');
+			}
+	#contentSearchBox {
+        position:relative;
+        height:2.85em;
+        z-index:2;
+    }
+    #contentSearchBox .SearchBox, #contentSearchBox .ShowAdvancedSearch {
+        display:inline-block;
+    }
+    .SearchBox {
+        position:absolute;
+        left:6px;
+        top:10px;
+    }
+    #c_search_psb_f {
+        height:2em;
+    }
+    .c_search_mc {
+        border:#bababa 1px solid;
+        background-color:#fff;
+        white-space:nowrap;
+        position:relative;
+        height:20px;
+        padding-right:35px;
+        background-position:right center;
+        background-repeat:no-repeat;
+    }
+    div.c_search_status, .c_search_mc label {
+        display:none;
+    }
+    #c_search_psb_box {
+        margin-top:2px;
+        margin-left:4px;
+        font-size:100%;
+    }
+    .RE_WebKit .c_search_mc input.c_search_box, .IE_M7 .c_search_mc input.c_search_box {
+        line-height:1.6em;
+    }
+    .c_search_mc input.c_search_box {
+        margin-top:0;
+        margin-bottom:2px;
+        margin-right:0;
+        margin-left:2px;
+        padding-left:5px;
+        padding-top:2px;
+        padding-right:auto;
+        border:0 none;
+        color:#666;
+        height:1.3em;
+        line-height:1.2em;
+        background:transparent;
+        width:100%;
+        outline:none;
+    }
+    /* input submit loupe */
+    element.style {
+        background:url(https://a.gfx.ms/h/command2.png) 38px 0px;
+    }
+    .c_search_mc input.c_search_go, .c_search_mc img.c_search_go {
+        border:0 none;
+        width:16px;
+        height:16px;
+        background:#fff no-repeat left top;
+        overflow:hidden;
+        cursor:pointer;
+        position:absolute;
+        right:9px;
+        top:.6em;
+        padding:0;
+        min-width:0;
+    }
+
+	/* SLIDE CHECKBOX CREDIT/DEBIT */
+	.slideBox {
+		width:80px;
+		height:26px;
+		background:#34495e;
+		
+		-webkit-border-radius:10px;
+		-moz-border-radius:10px;
+		border-radius:10px;
+		position:relative;
+
+		-webkit-box-shadow:inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+		-moz-box-shadow:inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+		box-shadow:inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+		/*border-bottom:2px solid #1A2530;*/
+	}
+
+	.slideBox:before {
+		content:url("images/fleche_credit.png");
+		font:12px/26px Arial, sans-serif;
+		color:#00bf00;
+		position:absolute;
+		left:10px;
+		z-index:0;
+		font-weight:bold;
+		top:7px;
+	}
+
+	.slideBox:after {
+		content:url("images/fleche_debit.png");
+		font:12px/26px Arial, sans-serif;
+		color:#ff0000;
+		position:absolute;
+		right:10px;
+		z-index:0;
+		font-weight:bold;
+		top:7px;
+	}
+
+	.slideBox label {
+		display:block;
+		width:35px;
+		height:22px;
+
+		-webkit-border-radius:8px;
+		-moz-border-radius:8px;
+		border-radius:8px;
+
+		-webkit-transition:all .4s ease;
+		-moz-transition:all .4s ease;
+		-o-transition:all .4s ease;
+		-ms-transition:all .4s ease;
+		transition:all .4s ease;
+		cursor:pointer;
+		position:absolute;
+		top:2px;
+		left:2px;
+		z-index:1;
+
+		background:#1abc9c;
+	}
+
+	.slideBox input[type=checkbox]:checked + label {
+		left:43px;
+	}

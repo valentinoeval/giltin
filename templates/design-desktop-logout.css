@@ -1,0 +1,151 @@
+* {font-family:Segoe UI, Sans-Serif;}
+body {
+	margin:0;
+	padding:0;
+	color:#505050;
+	/*background-color:#399bd9;*/
+	background-image:url('images/bg.png');
+}
+input {
+	width:297px;
+	height:40px;
+	padding:10px;
+	margin-bottom:15px;
+	background-color:#f3f3f3;
+	color:#757575;
+	border:none;
+	border-bottom:2px solid #e0e0e0;
+	border-radius:4px;
+	font-size:16px;
+}
+input[type="submit"] {
+	height:50px;
+	padding:10px;
+	margin-left:-1px;
+	background-color:#60bffb;
+	border:none;
+	border-bottom:2px solid #2e84bb;
+	border-radius:4px;
+	font-size:15pt;
+	color:#ffffff;
+	-webkit-transition:all .25s ease-in;
+	-moz-transition:all .25s ease-in;
+	-o-transition:all .25s ease-in;
+	transition:all .25s ease-in;
+	cursor:pointer;
+}
+input[type="submit"]:hover {
+	background-color:#53a6da;
+	color:#f5f5f5;
+}
+	#container_login {
+		margin:200px auto 0 auto;
+		width:550px;
+	}
+		#logo {
+			width:200px;
+			margin:-10px 70px 40px 70px;
+		}
+		#container_login_form {
+			width:340px;
+			height:488px;
+			position:fixed;
+			margin-left:-170px;
+			left:50%;
+			margin-top:-244px;
+			top:50%;
+			background-color:#ffffff;
+			border-radius:3px;
+			border-bottom:2px solid #b5b5b5;
+		}
+			#container_login_form form {
+				margin:22px;
+			}
+			#container_login_form a {
+				color:#505050;
+			}
+	/* Code message identique avec la partie logué */
+	.msg_good {
+		max-width:850px;
+		background-color:#aaffac;
+		border-radius:6px;
+		border-bottom:2px solid #1e7c20;
+		margin-bottom:15px;
+		position:relative;
+		z-index:1000;
+		margin-top:50%;
+		top:-180px;
+		box-shadow:0 10px 40px #858585;
+	}
+		.msg_good img {
+			margin:10px;
+			float:left;
+			width:50px;
+		}
+		.msg_good img#close_msg {
+			width:auto;
+			float:right;
+			-webkit-transition: all .25s ease-in;
+			-moz-transition: all .25s ease-in;
+			-o-transition: all .25s ease-in;
+			transition: all .25s ease-in;
+			opacity:0.3;
+			filter:alpha(opacity=30);
+			-moz-opacity:0.3;
+			cursor:pointer;
+		}
+		.msg_good img#close_msg:hover {
+			opacity:1.0;
+			filter:alpha(opacity=100);
+			-moz-opacity:1.0;
+		}
+		.msg_good span {
+			margin:10px;
+			position:absolute;
+		}
+	.msg_bad {
+		max-width:850px;
+		background-color:#ffadad;
+		border-radius:6px;
+		border-bottom:2px solid #9a3b3b;
+		margin-bottom:15px;
+		position:relative;
+		z-index:1000;
+		margin-top:50%;
+		top:-180px;
+		box-shadow:0 10px 40px #858585;
+	}
+		.msg_bad img {
+			margin:10px;
+			float:left;
+			width:50px;
+		}
+		.msg_bad img#close_msg {
+			width:auto;
+			float:right;
+			-webkit-transition: all .25s ease-in;
+			-moz-transition: all .25s ease-in;
+			-o-transition: all .25s ease-in;
+			transition: all .25s ease-in;
+			opacity:0.3;
+			filter:alpha(opacity=30);
+			-moz-opacity:0.3;
+			cursor:pointer;
+		}
+		.msg_bad img#close_msg:hover {
+			opacity:1.0;
+			filter:alpha(opacity=100);
+			-moz-opacity:1.0;
+		}
+		.msg_bad span {
+			margin:10px;
+			position:absolute;
+		}
+	.clear {
+		clear:both;
+	}
+	/* formulaire récupération mot de passe */
+	#reset {
+		display:none;
+	}
+	/* ================================================= */
