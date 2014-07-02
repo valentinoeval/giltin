@@ -1,6 +1,6 @@
 <?php
 	//determination de l'environnement
-	if (file_exists('kvs')) {
+	if (!file_exists('kvs')) {
 		//BASE DE DONNEES KingVal Studio
 		$bdd='mysql:host=mysql11.000webhost.com;dbname=a3909572_data';
 		$bddmdp='eval1992';
@@ -10,7 +10,7 @@
 		//BASE DE DONNEES localhost
 		$bdd='mysql:host=localhost;dbname=giltin';
 		$bdduser='root';
-		$bddmdp='';
+		$bddmdp='eval1992';
 	}
 
 	//CONSTANTES D'ACCES AUX MODULES

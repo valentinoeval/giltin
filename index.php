@@ -1,14 +1,15 @@
 <?php
 	session_start();
 	include('configs.php');
-	if (file_exists('kvs')) {
+	/*if (file_exists('kvs')) {
 		if (preg_match('/msg/', $_SERVER['HTTP_REFERER'])===1)
 			list($last_page, $msg)=explode('&msg', $_SERVER['HTTP_REFERER']);
 		else
 			list($last_page, $msg)=explode('&msg', $_SERVER['HTTP_REFERER']);
 	}
-	else
+	else*/
 		$last_page=$_SERVER['HTTP_REFERER'];
+
 	setcookie('last_page', $last_page, time()+604800);
 ?>
 <html lang="fr-FR">
