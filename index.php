@@ -30,7 +30,7 @@
 				<form action="login.php" method="post" name="login" id="login">
 					<input type="text" name="login" placeholder="Nom d'utilisateur" /><br />
 					<input type="password" name="password" placeholder="Mot de passe" /><br /><br />
-					<?php if (isset($_GET['module']) and !empty($_GET['module'])) echo '<input type="hidden" name="module" value="'.$_GET['module'].'" />'; ?>
+					<?php if (isset($_GET['m']) and !empty($_GET['m'])) echo '<input type="hidden" name="module" value="'.$_GET['m'].'" />'; ?>
 					<input type="submit" value="Connexion" /><br />
 					<a href="#" id="showFormReset">Mot de passe perdu ?</a>
 				</form>
@@ -82,14 +82,14 @@
 				if (isset($_GET['msg']) and !empty($_GET['msg']))
 					echo print_msg($_GET['msg']);	
 				//tests de validité du module appelé
-				if (!isset($_GET['module'])) {
+				if (!isset($_GET['m'])) {
 					//include("modules/home.php");
 				}
-				elseif ((isset($_GET['module']) and empty($_GET['module'])) or (isset($_GET['module']) and !file_exists("modules/".$_GET['module'].".php"))) {
+				elseif ((isset($_GET['m']) and empty($_GET['m'])) or (isset($_GET['m']) and !file_exists("modules/".$_GET['m'].".php"))) {
 					header('location:?msg=module_not_exist');
 				}
-				elseif (isset($_GET['module']) and file_exists("modules/".$_GET['module'].".php")) {
-					include("modules/".$_GET['module'].".php");
+				elseif (isset($_GET['m']) and file_exists("modules/".$_GET['m'].".php")) {
+					include("modules/".$_GET['m'].".php");
 				}
 			}
 		?>
