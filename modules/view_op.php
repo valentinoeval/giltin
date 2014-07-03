@@ -82,34 +82,41 @@
 	$datas5=$req5->fetch(PDO::FETCH_ASSOC);
 	$account_name=$datas5['nom'];
 	//affichage des options et informations
-	echo '<div class="conteneur_options">
-			Il y a <span class="info">'.$nb_op.'</span> op&eacute;ration';
-			if ($nb_op>1) echo 's';
-			echo ' bancaire';
-			if ($nb_op>1) echo 's';
-			echo ' en <span class="info">'.nb2month($m).'</span> pour votre <span class="info">';
-			echo $account_name.'</span> - <a href="?module=unverif_op&account='.$_GET['account'].'">'.$nb_unverif_op.' op&eacute;ration';if ($nb_unverif_op>1) echo 's';echo '</a> en attente de v&eacute;rification.<br />
-			Voir les op&eacute;rations bancaires du mois de
-			<ul id="mois">
-				<li><a href="">'.nb2month($m).'</a>
-					<ul>
-						<li><a href="?module=view_op&account='.$_GET['account'].'&mois=01">Janvier</a></li>
-						<li><a href="?module=view_op&account='.$_GET['account'].'&mois=02">F&eacute;vrier</a></li>
-						<li><a href="?module=view_op&account='.$_GET['account'].'&mois=03">Mars</a></li>
-						<li><a href="?module=view_op&account='.$_GET['account'].'&mois=04">Avril</a></li>
-						<li><a href="?module=view_op&account='.$_GET['account'].'&mois=05">Mai</a></li>
-						<li><a href="?module=view_op&account='.$_GET['account'].'&mois=06">Juin</a></li>
-						<li><a href="?module=view_op&account='.$_GET['account'].'&mois=07">Juillet</a></li>
-						<li><a href="?module=view_op&account='.$_GET['account'].'&mois=08">Août</a></li>
-						<li><a href="?module=view_op&account='.$_GET['account'].'&mois=09">Septembre</a></li>
-						<li><a href="?module=view_op&account='.$_GET['account'].'&mois=10">Octobre</a></li>
-						<li><a href="?module=view_op&account='.$_GET['account'].'&mois=11">Novembre</a></li>
-						<li><a href="?module=view_op&account='.$_GET['account'].'&mois=12">D&eacute;cembre</a></li>
-					</ul>
-				</li>
-			</ul>
-			Le solde est '.$type.' de '.$solde.'€
-		</div>';
+	echo '<section class="tablet tablet_user">
+			<img src="templates/images/clip.png" class="clip_task" /><br /><br />
+			<button class="button_link"><a href="?module=user&section=edit_user">Modifiez vos informations</a></button>&nbsp;
+			<button class="button_link"><a href="?module=gallery">Visitez votre galerie d\'avatars</a></button>&nbsp;
+			<button class="button_link"><a href="?module=view_logs">Suivi des connexions</a></button><br /><br />
+			<div class="conteneur_options">
+				Il y a <span class="info">'.$nb_op.'</span> op&eacute;ration';
+				if ($nb_op>1) echo 's';
+				echo ' bancaire';
+				if ($nb_op>1) echo 's';
+				echo ' en <span class="info">'.nb2month($m).'</span> pour votre <span class="info">';
+				echo $account_name.'</span> - <a href="?module=unverif_op&account='.$_GET['account'].'">'.$nb_unverif_op.' op&eacute;ration';if ($nb_unverif_op>1) echo 's';echo '</a> en attente de v&eacute;rification.<br />
+				Voir les op&eacute;rations bancaires du mois de
+				<ul id="mois">
+					<li><a href="">'.nb2month($m).'</a>
+						<ul>
+							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=01">Janvier</a></li>
+							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=02">F&eacute;vrier</a></li>
+							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=03">Mars</a></li>
+							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=04">Avril</a></li>
+							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=05">Mai</a></li>
+							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=06">Juin</a></li>
+							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=07">Juillet</a></li>
+							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=08">Août</a></li>
+							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=09">Septembre</a></li>
+							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=10">Octobre</a></li>
+							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=11">Novembre</a></li>
+							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=12">D&eacute;cembre</a></li>
+						</ul>
+					</li>
+				</ul>
+				Le solde est '.$type.' de '.$solde.'€
+			</div>
+			<section class="clear"></section><br />
+		</section>';
 
 	//affichage des opérations bancaires récupérées de la BDD
 	echo '<table cellspacing="0" cellpadding="0" id="tList">
