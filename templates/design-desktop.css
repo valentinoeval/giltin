@@ -139,7 +139,7 @@ h3 {
 #menu li:hover {background-color:#4ea770;}/*#0078d1*/
 #menu li a {height:46px; width:100%; line-height:46px; color:#fff; text-decoration:none; text-align:left; display:inline-block; padding:0 13px 0 13px;}
 #menu li#logo a {text-align:center; margin-left:-13px;}
-#menu li a:hover {color:#c0fffd;}
+#menu li a:hover {color:#dadada;}
 /* tous les icone dans le menu */
 #menu li a span#imgMenu {width:26px; height:46px; position:relative; display:inline-block; vertical-align:middle; border:none; margin-right:8px;}
 #menu li a span#imgMenu img {width:26px; height:26px; position:absolute; top:10px; left:0;}
