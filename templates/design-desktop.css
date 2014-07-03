@@ -161,7 +161,7 @@ h3 {
 }
 #menu li ul li, #menu li ul li:first-child {width:145px; margin:0 0 0 -40px; padding:0; height:30px; line-height:30px;}
 #menu li ul li a {height:30px; line-height:30px; width:100%; display:inline-block; text-align:left; font-size:15px;}
-#menu li:hover ul li:hover {background-color:#4db6f9;}
+#menu li:hover ul li:hover {background-color:#3a7d54;}
 /* icones sous menu Options*/
 /*#menu li ul li.dump {background-image:url('images/dump.png');}
 #menu li ul li.settings {list-style-image:url('images/settings.png');}
