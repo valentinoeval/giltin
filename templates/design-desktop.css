@@ -124,34 +124,41 @@ h3 {
 	}
 
 /******* CAS SPECIFIQUES *******/
-#menu {width:100%; height:40px; background-color:#404040; margin-top:0px; position:relative; z-index:1000; border-bottom:2px solid #555; border-radius:0 0 3px 3px;}/*background-color:#37a3e8;border-bottom:2px solid #2e84bb;*/
+#menu {width:100%; height:46px; background-color:#404040; margin-top:0px; position:relative; z-index:1000; border-bottom:2px solid #555;}/*background-color:#37a3e8; border-bottom:2px solid #2e84bb; border-radius:0 0 3px 3px;*/
 #menu li {
-	width:auto; height:40px;
+	width:auto; height:46px;
 	list-style:none;
-	display:inline-block;-
-	webkit-transition:all .07s ease-in;
+	display:inline-block;
+	-webkit-transition:all .07s ease-in;
 	-moz-transition:all .07s ease-in;
 	-o-transition:all .07s ease-in;
 	transition:all .07s ease-in;
 }
 #menu li#logo {width:250px; margin:0 -4px 0 -40px;}
-#menu li#user {position:absolute; right:0px; min-width:145px;}
-#menu li:hover {background-color:#0078d1;}
-#menu li a {height:40px; width:100%; line-height:40px; color:#4ea770; text-decoration:none; text-align:left; display:inline-block; padding:0 13px 0 13px;}
+#menu li#user {position:absolute; right:0px; min-width:191px;}
+#menu li:hover {background-color:#4ea770;}/*#0078d1*/
+#menu li a {height:46px; width:100%; line-height:46px; color:#fff; text-decoration:none; text-align:left; display:inline-block; padding:0 13px 0 13px;}
 #menu li#logo a {text-align:center; margin-left:-13px;}
 #menu li a:hover {color:#c0fffd;}
 /* tous les icone dans le menu */
-#menu li a span#imgMenu {width:26px; height:40px; bottom:2px; position:relative; display:inline-block; vertical-align:middle; border:none; margin-right:8px;}
-#menu li a span#imgMenu img {width:26px; height:26px; position:absolute; top:7px; left:0;}
+#menu li a span#imgMenu {width:26px; height:46px; position:relative; display:inline-block; vertical-align:middle; border:none; margin-right:8px;}
+#menu li a span#imgMenu img {width:26px; height:26px; position:absolute; top:10px; left:0;}
 /* image de fleche ves le bas */
 #menu li a span#imgMenuPlus {width:11px; height:8px; bottom:8px; position:relative; display:inline-block; vertical-align:middle; border:none; margin-left:8px;}
 #menu li a span#imgMenuPlus img {width:11px; height:8px; position:absolute; top:7px; left:0;}
 /* avatar dans le menu */
-#menu li a span#avatarMenu {width:40px; height:40px; bottom:2px; position:relative; display:inline-block; vertical-align:middle; border:none; margin:0 8px 0 -13px;}
-#menu li a span#avatarMenu img {width:40px; height:40px; position:absolute; left:0;}
+#menu li a span#avatarMenu {width:46px; height:46px; bottom:1px; position:relative; display:inline-block; vertical-align:middle; border:none; margin:0 8px 0 -13px;}
+#menu li a span#avatarMenu img {width:46px; height:46px; position:absolute; left:0;}
 /* sous menu */
-#menu li ul {display:none; width:105px; background-color:#0078d1; border-radius:0px 0px 3px 3px; border-bottom:2px solid #00528e; border-top:2px solid #0078d1; position:absolute;}
-#menu li:hover ul {display:block;}
+#menu li ul {display:none; width:105px; background-color:#4ea770; border-radius:0px 0px 3px 3px; border-bottom:2px solid #3a7d54; border-top:2px solid #555; position:absolute;}/*border-bottom:2px solid #00528e; border-top:2px solid #0078d1;*/
+#menu li#user ul {margin-left:46px;}
+#menu li:hover ul {
+	display:block;
+	-webkit-transition:all .07s ease-in;
+	-moz-transition:all .07s ease-in;
+	-o-transition:all .07s ease-in;
+	transition:all .07s ease-in;
+}
 #menu li ul li, #menu li ul li:first-child {width:145px; margin:0 0 0 -40px; padding:0; height:30px; line-height:30px;}
 #menu li ul li a {height:30px; line-height:30px; width:100%; display:inline-block; text-align:left; font-size:15px;}
 #menu li:hover ul li:hover {background-color:#4db6f9;}
@@ -180,7 +187,8 @@ h3 {
 				width:181px;
 			}
 #content {
-	margin:15px 0 0 260px;
+	margin:25px 0 0 250px;
+	padding:0 15px;
 }
 	#message {
 		width:400px;
@@ -200,8 +208,9 @@ h3 {
 		color:#37a3e8;
 	}
 	#tList {
-		min-width:850px;
+		/*min-width:850px;*/
 		margin:15px 0 15px 0;
+		width:100%;
 	}
 		#tList tr#tHeader {
 			font-size:18px;

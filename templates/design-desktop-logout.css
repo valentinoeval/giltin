@@ -27,7 +27,7 @@ input[type="submit"] {
 	border-bottom:2px solid #555;/*2e84bb*/
 	border-radius:4px;
 	font-size:15pt;
-	color:#4ea770;
+	color:#fff;
 	-webkit-transition:all .25s ease-in;
 	-moz-transition:all .25s ease-in;
 	-o-transition:all .25s ease-in;
@@ -35,7 +35,7 @@ input[type="submit"] {
 	cursor:pointer;
 }
 input[type="submit"]:hover {
-	background-color:#303030;
+	background-color:#606060;
 	color:#f5f5f5;
 }
 	#container_login {
