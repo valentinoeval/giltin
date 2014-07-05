@@ -23,13 +23,13 @@
 			if ($action=='update') {
 				//si le mdp et la vérif ne sont pas identique
 				if (!empty($_POST['password']) and $_POST['password']!=$_POST['passverif'])
-					header('location:?module=user&section=edit_user&msg=user_update_error');
+					header('location:?m=user&section=edit_user&msg=user_update_error');
 				//si l'email n'est pas valide
 				if (!empty($_POST['email']) and emailValidation($_POST['email']))
-					header('location:?module=user&section=edit_user&msg=user_update_error');
+					header('location:?m=user&section=edit_user&msg=user_update_error');
 				//si le nom n'est pas saisi
 				if (empty($_POST['nom']))
-					header('location:?module=user&section=edit_user&msg=user_name_empty');
+					header('location:?m=user&section=edit_user&msg=user_name_empty');
 				
 				try {
 					$bddlog=new PDO($bdd, $bdduser, $bddmdp);
@@ -82,7 +82,7 @@
 								rename($chemin_crop, 'uploads/'.$_SESSION['login'].'/avatar/'.$nom.'.'.$extension);
 								//redimentionnement de l'image
 								resizeImage($chemin_original, $chemin_crop, 40, 40);
-								header('location:?module=user&size='.$imageSize['size']);
+								header('location:?m=user&size='.$imageSize['size']);
 								//modification de l'avatar dans la session
 								$_SESSION['avatar']=$chemin_original;
 								$_SESSION['avatar_mini']=$chemin_crop;
@@ -92,7 +92,7 @@
 						}
 					}
 					else
-						header('location:?module=user&size='.$_FILES['avatar']['size']);
+						header('location:?m=user&size='.$_FILES['avatar']['size']);
 				}
 				if (!empty($_POST['lang']) and $_POST['lang']!=$datas['lang']) {
 					if ($nb>0) $sql.=', ';
@@ -105,10 +105,10 @@
 					if ($bddlog->exec($sql)) {
 						$_SESSION['nom']=$_POST['nom'];
 						$_SESSION['email']=$_POST['email'];
-						header('location:?module=user&section=view_user&msg=user_updated');
+						header('location:?m=user&section=view_user&msg=user_updated');
 					}
 					else {
-						header('location:?module=user&section=edit_user&msg=user_update_error');
+						header('location:?m=user&section=edit_user&msg=user_update_error');
 					}
 				}
 
@@ -121,7 +121,7 @@
 					<section class="tablet tablet_user">
 						<img src="templates/images/clip.png" class="clip_task" /><br /><br />
 						<section id="list_infos_user_container">
-							<form action="?module=user&section=edit_user&action=update" method="post" enctype="multipart/form-data">
+							<form action="?m=user&section=edit_user&action=update" method="post" enctype="multipart/form-data">
 								Avatar :<br />
 								<input type="file" name="avatar" /><br />
 								<input type="text" name="nom" placeholder="Pr&eacute;nom Nom" value="'.$nom.'" /><br />
@@ -157,9 +157,9 @@
 			echo '
 				<section class="tablet tablet_user">
 					<img src="templates/images/clip.png" class="clip_task" /><br /><br />
-					<button class="button_link"><a href="?module=user&section=edit_user">Modifiez vos informations</a></button>&nbsp;
-					<button class="button_link"><a href="?module=gallery">Visitez votre galerie d\'avatars</a></button>&nbsp;
-					<button class="button_link"><a href="?module=view_logs">Suivi des connexions</a></button><br /><br />
+					<button class="button_link"><a href="?m=user&section=edit_user">Modifiez vos informations</a></button>&nbsp;
+					<button class="button_link"><a href="?m=gallery">Visitez votre galerie d\'avatars</a></button>&nbsp;
+					<button class="button_link"><a href="?m=view_logs">Suivi des connexions</a></button><br /><br />
 					<section id="list_infos_user_container">
 						<ul id="list_infos_user">
 							<li id="login">'.$nom.'</li>

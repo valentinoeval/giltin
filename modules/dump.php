@@ -45,7 +45,7 @@
 				$file_size=human_file_size($file_size_bytes);
 				//ajout dans la table backup du dump de la base
 				$bddlog->exec('INSERT INTO `giltin_backups` VALUES ("", "'.$_SESSION['id'].'", "'.$name_file.'", "'.$ad_date.'", "'.$file_size.'")');
-				header('location:?module=dump&msg=backup_dump');
+				header('location:?m=dump&msg=backup_dump');
 			}
 			catch (PDOException $message) {
 				die("<div class='msgbad'>Echec d\'accès à la base de donn&eacute;es</div>");
@@ -61,7 +61,7 @@
 				$file=file_get_contents('uploads/'.$_SESSION['login'].'/dumps/'.$_GET['file'].'.sql');
 				echo $file;
 				$bddlog->exec($file);
-				header('location:?module=dump&msg=restore_dump');
+				header('location:?m=dump&msg=restore_dump');
 			}
 			catch (PDOException $message) {
 				die("<div class='msgbad'>Erreur rencontr&eacute;e : ".$message->getMessage()."</div>");
@@ -75,7 +75,7 @@
 				$bddlog=new PDO($bdd, $bdduser, $bddmdp);
 
 				echo '<div class="conteneur_options">
-						<button class="button_link"><a href="?module=dump&dump=backup">Faire un backup de vos comptes</a></button>
+						<button class="button_link"><a href="?m=dump&dump=backup">Faire un backup de vos comptes</a></button>
 					</div>
 				 	   <table cellspacing="0" cellpadding="0" id="tList">
 						<tr id="tHeader">
@@ -94,7 +94,7 @@
 							<td><span title="#'.$datas5['id'].'">'.$datas5['nom'].'</span></td>
 							<td>'.$datas5['ad_date'].'</td>
 							<td>'.$datas5['size'].'</td>
-							<td><a href="?module=dump&dump=restore&file='.$datas5['nom'].'">Restaurer</a></td>
+							<td><a href="?m=dump&dump=restore&file='.$datas5['nom'].'">Restaurer</a></td>
 							<td>
 								<div class="del">
 									<img src="templates/images/empty.png" class="del_link" onclick="hydrating_form_dump('.$datas5['id'].', \''.$datas5['nom'].'\', \''.$url.'\')" title="Supprimer" />
@@ -107,7 +107,7 @@
 						<section id="overLayer">
 							<section id="contentOverLayer">
 								Etes vous sur de vouloir supprimer cette sauvegarde : <span id="dump_name"></span>?<br /><br />
-								<form action="?module=deleter" method="post" id="del_form">
+								<form action="?m=deleter" method="post" id="del_form">
 									<input type="hidden" id="id" name="id" />
 									<input type="hidden" id="file" name="file" />
 									<input type="hidden" id="url" name="url" />
