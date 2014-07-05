@@ -20,7 +20,6 @@
 	switch ($getDump) {
 		//backup de la bdd
 		case 'backup':
-			//connexion BDD
 			try {
 				$bddlog=new PDO($bdd, $bdduser, $bddmdp);
 
