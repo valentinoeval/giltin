@@ -33,7 +33,7 @@
 
 				//écriture de toutes les opération du ccp
 				while ($datas1=$req1->fetch(PDO::FETCH_ASSOC)) {
-					fputs($file, "INSERT INTO `giltin_comptes_".$_SESSION['id']."` VALUES (".$datas1['id'].", '".$datas1['id_user']."', '".$datas1['nom']."', '".$datas1['categorie']."', '".$datas1['op_date']."', '".$datas1['type']."', ".$datas1['montant'].", ".$datas1['verif'].");\n");
+					fputs($file, "INSERT INTO `giltin_comptes_".$_SESSION['id']."` VALUES (".$datas1['id'].", '".$datas1['id_compte']."', '".$datas1['nom']."', '".$datas1['categorie']."', '".$datas1['op_date']."', '".$datas1['type']."', ".$datas1['montant'].", ".$datas1['verif'].");\n");
 				}
 				fputs($file, "\n");
 				fclose($file);

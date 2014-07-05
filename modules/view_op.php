@@ -84,32 +84,32 @@
 	//affichage des options et informations
 	echo '<section class="tablet tablet_user">
 			<img src="templates/images/clip.png" class="clip_task" /><br /><br />
-			<button class="button_link"><a href="?module=user&section=edit_user">Modifiez vos informations</a></button>&nbsp;
-			<button class="button_link"><a href="?module=gallery">Visitez votre galerie d\'avatars</a></button>&nbsp;
-			<button class="button_link"><a href="?module=view_logs">Suivi des connexions</a></button><br /><br />
+			<button class="button_link"><a href="?m=user&section=edit_user">Modifiez vos informations</a></button>&nbsp;
+			<button class="button_link"><a href="?m=unverif_op&account='.$_GET['account'].'">'.$nb_unverif_op.' op&eacute;ration';if ($nb_unverif_op>1) echo 's';echo ' en attente</a></button>
+			<br /><br />
 			<div class="conteneur_options">
 				Il y a <span class="info">'.$nb_op.'</span> op&eacute;ration';
 				if ($nb_op>1) echo 's';
 				echo ' bancaire';
 				if ($nb_op>1) echo 's';
 				echo ' en <span class="info">'.nb2month($m).'</span> pour votre <span class="info">';
-				echo $account_name.'</span> - <a href="?module=unverif_op&account='.$_GET['account'].'">'.$nb_unverif_op.' op&eacute;ration';if ($nb_unverif_op>1) echo 's';echo '</a> en attente de v&eacute;rification.<br />
+				echo $account_name.'</span> - <a href="?m=unverif_op&account='.$_GET['account'].'">'.$nb_unverif_op.' op&eacute;ration';if ($nb_unverif_op>1) echo 's';echo '</a> en attente de v&eacute;rification.<br />
 				Voir les op&eacute;rations bancaires du mois de
 				<ul id="mois">
 					<li><a href="">'.nb2month($m).'</a>
 						<ul>
-							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=01">Janvier</a></li>
-							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=02">F&eacute;vrier</a></li>
-							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=03">Mars</a></li>
-							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=04">Avril</a></li>
-							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=05">Mai</a></li>
-							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=06">Juin</a></li>
-							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=07">Juillet</a></li>
-							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=08">Août</a></li>
-							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=09">Septembre</a></li>
-							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=10">Octobre</a></li>
-							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=11">Novembre</a></li>
-							<li><a href="?module=view_op&account='.$_GET['account'].'&mois=12">D&eacute;cembre</a></li>
+							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=01">Janvier</a></li>
+							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=02">F&eacute;vrier</a></li>
+							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=03">Mars</a></li>
+							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=04">Avril</a></li>
+							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=05">Mai</a></li>
+							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=06">Juin</a></li>
+							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=07">Juillet</a></li>
+							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=08">Août</a></li>
+							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=09">Septembre</a></li>
+							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=10">Octobre</a></li>
+							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=11">Novembre</a></li>
+							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=12">D&eacute;cembre</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -149,7 +149,7 @@
 					if ($datas['verif']=='1')
 						echo '<img src="templates/images/verified.png" title="Op&eacute;ration bancaire v&eacute;rifi&eacute;e" />';
 					else
-						echo '<a href="?module=view_op&account='.$_GET['account'].'&verif='.$datas['id'].'"><img src="templates/images/unverified.png" title="V&eacute;rifer l\'op&eacute;ration" /></a>';
+						echo '<a href="?m=view_op&account='.$_GET['account'].'&verif='.$datas['id'].'"><img src="templates/images/unverified.png" title="V&eacute;rifer l\'op&eacute;ration" /></a>';
 				echo '</td>';
 				echo '<td class="nom"><span title="#'.$datas['id'].'">'.charSpec2code($datas['nom'], "deconvert").'</span></td>';
 				echo '<td>'.build_date_fr($datas['op_date']).'</td>';
@@ -168,7 +168,7 @@
 					echo $datas['montant'].' €</span>';
 				echo '</td>';
 				echo '<td><div class="newcom"><a href="./" /><img src="templates/images/empty.png" title="Ajouter un commentaire" /></a></div></td>';
-				echo '<td><div class="edit"><a href="?module=edit&type=op&account='.$_GET['account'].'&id='.$datas['id'].'" /><img src="templates/images/empty.png" title="Editer" /></a></div></td>';
+				echo '<td><div class="edit"><a href="?m=edit&type=op&account='.$_GET['account'].'&id='.$datas['id'].'" /><img src="templates/images/empty.png" title="Editer" /></a></div></td>';
 				echo '<td>
 						<div class="del">
 							<img src="templates/images/empty.png" class="del_link" onclick="hydrating_form_op('.$_GET['account'].', '.$datas['id'].', \''.charSpec2code($datas['nom'], "deconvert").'\', \''.$url.'\')" title="Supprimer" />
@@ -181,7 +181,7 @@
 			<section id="overLayer">
 				<section id="contentOverLayer">
 					Etes vous sur de vouloir supprimer cette op&eacute;ration bancaire : <span id="op_name"></span>?<br /><br />
-					<form action="?module=deleter" method="post" id="del_form">
+					<form action="?m=deleter" method="post" id="del_form">
 						<input type="hidden" id="account" name="account" />
 						<input type="hidden" id="id" name="id" />
 						<input type="hidden" id="url" name="url" />

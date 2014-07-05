@@ -48,16 +48,16 @@
 										//ajout opération dans le compte 2
 										$req2='INSERT INTO giltin_comptes_'.$_SESSION['id'].' VALUES("", "'.$_POST['virement_account_2'].'", "'.charSpec2code(strip_codes("Virement ".$_POST['label']), "convert").'", "'.$_POST['categorie'].'", "'.$_POST['date'].'", "'.$type2.'", "'.$_POST['montant'].'", "0")';
 										$bddlog->exec($req2);
-										header('location:?module=add_op&msg=add_op');
+										header('location:?m=add_op&msg=add_op');
 									}
 									else
-										header('location:?module=add_op&msg=not_different');
+										header('location:?m=add_op&msg=not_different');
 								}
 								else
-									header('location:?module=add_op&msg=not_account2');
+									header('location:?m=add_op&msg=not_account2');
 							}
 							else
-								header('location:?module=add_op&msg=not_account1');
+								header('location:?m=add_op&msg=not_account1');
 						}
 						//sinon on ajoute simplement dans le compte sélectionné l'opération bancaire
 						else {
@@ -69,26 +69,26 @@
 										$type='d';
 									$req='INSERT INTO giltin_comptes_'.$_SESSION['id'].' VALUES("", "'.$_POST['account'].'", "'.charSpec2code(strip_codes($_POST['label']), "convert").'", "'.$_POST['categorie'].'", "'.$_POST['date'].'", "'.$type.'", "'.$_POST['montant'].'", "0")';
 									$bddlog->exec($req);
-									header('location:?module=add_op&msg=add_op');
+									header('location:?m=add_op&msg=add_op');
 								}
 								else
-									header('location:?module=add_op&msg=add_category');
+									header('location:?m=add_op&msg=add_category');
 							}
 							else
-								header('location:?module=add_op&msg=not_account');
+								header('location:?m=add_op&msg=not_account');
 						}
 					}
 					else
-						header('location:index.php?module=add_op&msg=empty_date');
+						header('location:index.php?m=add_op&msg=empty_date');
 				}
 				else
-					header('location:?module=add_op&msg=not_nb');
+					header('location:?m=add_op&msg=not_nb');
 			}
 			else
-				header('location:?module=add_op&msg=not_amount');
+				header('location:?m=add_op&msg=not_amount');
 		}
 		else
-			header('location:?module=add_op&msg=name_op');
+			header('location:?m=add_op&msg=name_op');
 	}
 	$req2=$bddlog->query('SELECT * FROM giltin_list_comptes WHERE id_user='.$_SESSION['id'].' GROUP BY id_compte ASC');
 	$req3=$bddlog->query('SELECT * FROM giltin_list_comptes WHERE id_user='.$_SESSION['id'].' GROUP BY id_compte ASC');
@@ -96,7 +96,7 @@
 	$req5=$bddlog->query('SELECT * FROM giltin_categories');
 ?>
 <h3>Ajouter une op&eacute;ration bancaire</h3>
-<form action="?module=add_op" method="post">
+<form action="?m=add_op" method="post">
 	<input type="text" name="label" placeholder="Nom de l'op&eacute;ration bancaire" class="saisie" /><br />
 	<div class="squared">
 		Virement :&nbsp;&nbsp;
