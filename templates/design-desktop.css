@@ -17,7 +17,7 @@ body {
 	#mois li > ul {display:none; width:75px; position:absolute; background-color:#f9f9f9; text-align:left; border-radius:0px 0px 3px 3px; border-bottom:2px solid #d8d8d8;}
 	#mois li:hover > ul {/*display:block;*/}
 	#mois li > ul li {height:28px; width:97px; line-height:28px; font-size:18px; margin-left:-40px; padding:0;}
-	#mois li > ul li a {font-size:15px; width:100%; padding:0 8px 0 10px;}
+	#mois li > ul li a {color:#909090; text-decoration:none; display:block; font-size:15px; width:100%; padding:0 8px 0 10px;}
 	#mois li:hover > ul li a:hover {color:#ffffff; background-color:#a0a0a0}
 
 /* CAS GENARAUX */
@@ -135,7 +135,7 @@ h3 {
 	border-radius:4px;
 	font-size:16px;
 }
-	.button_mounth ul li a {text-align:left;}
+	.button_mounth ul li #current_mounth {text-align:left;}
 
 /******* CAS SPECIFIQUES *******/
 #menu {width:100%; height:46px; background-color:#404040; margin-top:0px; position:relative; z-index:1000; border-bottom:2px solid #555;}/*background-color:#37a3e8; border-bottom:2px solid #2e84bb; border-radius:0 0 3px 3px;*/
