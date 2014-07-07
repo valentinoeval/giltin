@@ -84,19 +84,9 @@
 	//affichage des options et informations
 	echo '<section class="tablet tablet_user">
 			<img src="templates/images/clip.png" class="clip_task" /><br /><br />
-			<button class="button_link"><a href="?m=user&section=edit_user">Modifiez vos informations</a></button>&nbsp;
-			<button class="button_link"><a href="?m=unverif_op&account='.$_GET['account'].'">'.$nb_unverif_op.' op&eacute;ration';if ($nb_unverif_op>1) echo 's';echo ' en attente</a></button>
-			<br /><br />
-			<div class="conteneur_options">
-				Il y a <span class="info">'.$nb_op.'</span> op&eacute;ration';
-				if ($nb_op>1) echo 's';
-				echo ' bancaire';
-				if ($nb_op>1) echo 's';
-				echo ' en <span class="info">'.nb2month($m).'</span> pour votre <span class="info">';
-				echo $account_name.'</span> - <a href="?m=unverif_op&account='.$_GET['account'].'">'.$nb_unverif_op.' op&eacute;ration';if ($nb_unverif_op>1) echo 's';echo '</a> en attente de v&eacute;rification.<br />
-				Voir les op&eacute;rations bancaires du mois de
+			<button class="button_mounth">
 				<ul id="mois">
-					<li><a href="">'.nb2month($m).'</a>
+					<li><span id="current_mounth">'.nb2month($m).'<span id="imgMenuPlus"><img alt="Plus" src="templates/images/plus.png" /></span></span>
 						<ul>
 							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=01">Janvier</a></li>
 							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=02">F&eacute;vrier</a></li>
@@ -113,6 +103,19 @@
 						</ul>
 					</li>
 				</ul>
+			</button>&nbsp;';
+		if ($nb_unverif_op>0) {
+			echo '<button class="button_link"><a href="?m=unverif_op&account='.$_GET['account'].'">'.$nb_unverif_op.' op&eacute;ration';if ($nb_unverif_op>1) echo 's';echo ' en attente</a></button>';
+		}
+		echo '<br /><br />
+			<div class="conteneur_options">
+				Il y a <span class="info">'.$nb_op.'</span> op&eacute;ration';
+				if ($nb_op>1) echo 's';
+				echo ' bancaire';
+				if ($nb_op>1) echo 's';
+				echo ' en <span class="info">'.nb2month($m).'</span> pour votre <span class="info">';
+				echo $account_name.'</span> - <a href="?m=unverif_op&account='.$_GET['account'].'">'.$nb_unverif_op.' op&eacute;ration';if ($nb_unverif_op>1) echo 's';echo '</a> en attente de v&eacute;rification.<br />
+				Voir les op&eacute;rations bancaires du mois de
 				Le solde est '.$type.' de '.$solde.'€
 			</div>
 			<section class="clear"></section><br />

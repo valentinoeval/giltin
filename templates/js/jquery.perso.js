@@ -66,4 +66,9 @@ $(document).ready(function() {
 	$('#btn_cancel').click(function() {
 		$('#wrapper_overLayer').fadeOut(350);
 	});
+
+	//affichage de la liste de mois de l'année lors du clique sur le bouton
+	$('#button_mounth').click(function() {
+		$('#mois li > ul').css({"display" : "block"});
+	});
 });
