@@ -28,7 +28,7 @@
 			if ($bddlog->exec('UPDATE giltin_users SET avatar="'.$_POST['avatar'].'" WHERE id='.$_SESSION['id'])) {
 				$_SESSION['avatar']=$directory.$nom.'.'.$extension;
 				$_SESSION['avatar_mini']=$directory.$nom.'_mini.'.$extension;
-				header('location:?module=gallery&msg=avatar_changed');
+				header('location:?m=gallery&msg=avatar_changed');
 			}
 			break;
 	}
@@ -50,7 +50,7 @@
 			<section id="overLayer">
 				<section id="contentOverLayer">
 					Etes vous sur de vouloir remplacer votre avatar par celui-ci : <span id="avatar_mini"></span>?<br /><br />
-					<form action="?module=gallery&action=change" method="post" id="del_form">
+					<form action="?m=gallery&action=change" method="post" id="del_form">
 						<input type="hidden" id="avatar" name="avatar" />
 						<input type="submit" id="btn_confirm" value="Modifier" /><input type="reset" id="btn_cancel" value="Annuler" />
 					</form>

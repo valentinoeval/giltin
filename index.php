@@ -59,7 +59,7 @@
 		?>
 		<div id="barLeft">
 			<div id="barLeft-content">
-				<form action="?module=search" method="post" class="searchbar">
+				<form action="?m=search" method="post" class="searchbar">
 					<div id="contentSearchBox">
 					    <span class="SearchBox">
 					        <div  id="c_search_psb_f" class="c_search_mc" >

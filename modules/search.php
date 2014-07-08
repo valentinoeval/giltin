@@ -36,7 +36,8 @@
 
 		//vérification du type MM/AAAA
 		elseif (preg_match("#^[0-9]{2}/[0-9]{4}$#", $_POST['name'])) {
-			echo "Cas de recherche par <span>MM/AAAA</span><br>";
+			list($mois, $annee)=explode('/', $_POST['name']);
+			echo 'Recherche des opérations du mois de '.dateInt2String($mois).' '.$annee;
 			$_POST['name']=date('Y-m', time($_POST['name']));
 			//récupération des opération bancaires
 			$req=$bddlog->query('SELECT * FROM giltin_comptes_'.$_SESSION['id'].' WHERE op_date like "'.$_POST['name'].'%"');
@@ -45,7 +46,7 @@
 
 		//vérification du type AAAA
 		elseif (preg_match("#^[0-9]{4}$#", $_POST['name'])) {
-			echo "Cas de recherche par <span>AAAA</span><br>";
+			echo 'Recherche des opérations de l\'année <span>'.$_POST['name'].'</span><br />'; 
 			//récupération des opération bancaires
 			$req=$bddlog->query('SELECT * FROM giltin_comptes_'.$_SESSION['id'].' WHERE op_date like "'.$_POST['name'].'%"');
 			$req2=$bddlog->query('SELECT count(*) AS nb_op FROM giltin_comptes_'.$_SESSION['id'].' WHERE op_date like "'.$_POST['name'].'%"');
@@ -149,7 +150,7 @@
 						echo '</td>';
 						echo '<td class="compte">'.$datas3['nom'].'</td>';
 						echo '<td class="verifie">';
-							if ($datas['verif']=='0') echo '<a href="?module=view_op&account='.$datas['id_compte'].'&verif='.$datas['id'].'">V&eacute;rifi&eacute;</a>';
+							if ($datas['verif']=='0') echo '<a href="?m=view_op&account='.$datas['id_compte'].'&verif='.$datas['id'].'">V&eacute;rifi&eacute;</a>';
 						echo '</td>';
 						echo '<td><div class="newcom"><a href="./" /><img src="templates/images/empty.png" title="Ajouter un commentaire" /></a></div></td>';
 						echo '<td><div class="edit"><a href="./" /><img src="templates/images/empty.png" title="Editer" /></a></div></td>';

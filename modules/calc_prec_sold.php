@@ -73,4 +73,4 @@
 	}
 
 	//redirection vers la page index avec affichage d'un message prévenant du calcul du solde de fin du mois précédent
-	if ($nb_calc>0) header('location:?module=add_op&msg=ad_sold_prec');
+	if ($nb_calc>0) header('location:?m=add_op&msg=ad_sold_prec');

@@ -34,19 +34,19 @@
 						$nom=strip_codes($_POST['nom']);
 						//insertion du nouveau compte
 						$bddlog->exec('INSERT INTO giltin_list_comptes VALUES('.$_SESSION['id'].', '.$nb_compte.', "'.$nom.'")');
-						header('location:?module=settings&msg=account_create');
+						header('location:?m=settings&msg=account_create');
 					}
 					else
-						header('location:?module=settings&msg=invalid_account_name');
+						header('location:?m=settings&msg=invalid_account_name');
 				}
 				else
-					header('location:?module=settings&msg=no_account_name');
+					header('location:?m=settings&msg=no_account_name');
 				break;
 		}
 	}
 ?>
 <h3>Ajouter un compte</h3>
-<form action="?module=settings&section=new_account" method="post">
+<form action="?m=settings&section=new_account" method="post">
 	<input type="text" name="nom" placeholder="Nom du compte" /><br />
 	<input type="submit" value="Ajouter" />
 </form>
@@ -98,7 +98,7 @@
 					<td>'.$nb_op.'</td>
 					<td>'.$etat.'</td>
 					<td>'.$montant.'</td>
-					<td><div class="edit"><a href="?module=edit&type=account&account='.$datas2['id_compte'].'" /><img src="templates/images/empty.png" title="Editer" /></a></div></td>
+					<td><div class="edit"><a href="?m=edit&type=account&account='.$datas2['id_compte'].'" /><img src="templates/images/empty.png" title="Editer" /></a></div></td>
 					<td>
 						<div class="del">
 							<img src="templates/images/empty.png" class="del_link" onclick="hydrating_form_account('.$datas2['id_compte'].', \''.$datas2['nom'].'\', \''.$url.'\')" title="Supprimer" />
@@ -112,7 +112,7 @@
 			<section id="overLayer">
 				<section id="contentOverLayer">
 					Etes vous sur de vouloir supprimer ce compte bancaire : <span id="account_name"></span>?<br /><br />
-					<form action="?module=deleter" method="post" id="del_form">
+					<form action="?m=deleter" method="post" id="del_form">
 						<input type="hidden" id="id" name="id" />
 						<input type="hidden" id="url" name="url" />
 						<input type="hidden" name="module" value="settings" />

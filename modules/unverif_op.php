@@ -42,7 +42,7 @@
 	//marquer dans la bdd l'opération comme étant vérifiée
 	if (isset($_GET['verif']) and !empty($_GET['verif'])) {
 		$bddlog->exec('UPDATE ccp SET verif="1" WHERE id="'.$_GET['verif'].'"');
-		//header('location:?module=view_op&account='.$_GET['account']);
+		//header('location:?m=view_op&account='.$_GET['account']);
 		header('location:'.$_SERVER['HTTP_REFERER']);
 	}
 
@@ -94,7 +94,7 @@
 					if ($datas['verif']=='1')
 						echo '<img src="templates/images/verified.png" title="Op&eacute;ration bancaire v&eacute;rifi&eacute;e" />';
 					else
-						echo '<a href="?module=view_op&account='.$_GET['account'].'&verif='.$datas['id'].'"><img src="templates/images/unverified.png" title="V&eacute;rifer l\'op&eacute;ration" /></a>';
+						echo '<a href="?m=view_op&account='.$_GET['account'].'&verif='.$datas['id'].'"><img src="templates/images/unverified.png" title="V&eacute;rifer l\'op&eacute;ration" /></a>';
 				echo '</td>';
 				echo '<td class="nom"><span title="#'.$datas['id'].'">'.charSpec2code($datas['nom'], "deconvert").'</span></td>';
 				echo '<td>'.build_date_fr($datas['op_date']).'</td>';
@@ -113,8 +113,8 @@
 					echo $datas['montant'].' €</span>';
 				echo '</td>';
 				echo '<td><div class="newcom"><a href="./" /><img src="templates/images/empty.png" title="Ajouter un commentaire" /></a></div></td>';
-				echo '<td><div class="edit"><a href="?module=edit&type=op&account='.$_GET['account'].'&id='.$datas['id'].'" /><img src="templates/images/empty.png" title="Editer" /></a></div></td>';
-				echo '<td><div class="del"><a href="?module=del_op&account='.$_GET['account'].'&id='.$datas['id'].'&url='.$url.'" /><img src="templates/images/empty.png" title="Supprimer" /></a></div></td>';
+				echo '<td><div class="edit"><a href="?m=edit&type=op&account='.$_GET['account'].'&id='.$datas['id'].'" /><img src="templates/images/empty.png" title="Editer" /></a></div></td>';
+				echo '<td><div class="del"><a href="?m=del_op&account='.$_GET['account'].'&id='.$datas['id'].'&url='.$url.'" /><img src="templates/images/empty.png" title="Supprimer" /></a></div></td>';
 			echo '</tr>';
 	}
 	echo '</table>';
