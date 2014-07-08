@@ -45,16 +45,16 @@
 							//remplacement de la virgule par un point pour l'enregistrement dans la base
 							$_POST['montant']=str_replace(',', '.', $_POST['montant']);
 							$bddlog->exec('UPDATE giltin_comptes_'.$_SESSION['id'].' SET id_compte="'.$_POST['account'].'", nom="'.$nom.'", categorie="'.$_POST['categorie'].'", op_date="'.$_POST['op_date'].'", type="'.$type.'", montant='.$_POST['montant'].' WHERE id_compte='.$_POST['id_compte'].' AND id='.$_POST['id']);
-							header('location:?module=view_op&account='.$_POST['id_compte'].'&msg=op_updated');
+							header('location:?m=view_op&account='.$_POST['id_compte'].'&msg=op_updated');
 						}
 						else
-							header('location:?module=edit&type=op&account='.$_POST['id_compte'].'&id='.$_POST['id'].'&msg=not_nb');
+							header('location:?m=edit&type=op&account='.$_POST['id_compte'].'&id='.$_POST['id'].'&msg=not_nb');
 					}
 					else
-						header('location:?module=edit&type=op&account='.$_POST['id_compte'].'&id='.$_POST['id'].'&msg=not_amount');
+						header('location:?m=edit&type=op&account='.$_POST['id_compte'].'&id='.$_POST['id'].'&msg=not_amount');
 				}
 				else
-					header('location:?module=edit&type=op&account='.$_POST['id_compte'].'&id='.$_POST['id'].'&msg=name_op');
+					header('location:?m=edit&type=op&account='.$_POST['id_compte'].'&id='.$_POST['id'].'&msg=name_op');
 			}
 			elseif (!isset($action) or $action==null) {
 				$req=$bddlog->query('SELECT * FROM giltin_comptes_'.$_SESSION['id'].' WHERE id_compte='.$account.' AND id='.$id);
@@ -74,7 +74,7 @@
 					$disabled='';*/
 				echo '
 					<h3>Modification de l\'op&eacute;ration bancaire</h3>
-					<form action="?module=edit&type=op&action=update" method="post">
+					<form action="?m=edit&type=op&action=update" method="post">
 						<input type="text" '.$disabled.' name="nom" placeholder="Nom de l\'op&eacute;ration bancaire" value="'.$datas['nom'].'" /><br />
 						<select name="account">';
 							$i=1;
@@ -114,7 +114,7 @@
 					//convertion des caractères spéciaux en code html
 					$nom=charSpec2code(strip_codes($_POST['nom']), 'convert');
 					$bddlog->exec('UPDATE giltin_list_comptes SET nom="'.$nom.'" WHERE id_user="'.$_SESSION['id'].'" AND id_compte="'.$_POST['id_compte'].'"');
-					header('location:?module=settings&msg=account_updated');
+					header('location:?m=settings&msg=account_updated');
 				}
 				else
 					header('location:');
@@ -124,7 +124,7 @@
 				$datas=$req->fetch(PDO::FETCH_ASSOC);
 				echo '
 					<h3>Modification du compte</h3>
-					<form action="?module=edit&type=account&action=update" method="post">
+					<form action="?m=edit&type=account&action=update" method="post">
 						<input type="text" name="nom" placeholder="Nom du compte" value="'.$datas['nom'].'" /><br />
 						<input type="hidden" name="id_compte" value="'.$account.'" />
 						<input type="submit" value="Modifier" />
