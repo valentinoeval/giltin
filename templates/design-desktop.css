@@ -145,7 +145,7 @@ tr {
 #menu li#logo a {color:#fff;}
 #menu li#logo:hover {background-color:#161b1d;}
 #menu li#user {position:absolute; right:0px; min-width:191px;}
-#menu li:hover {background-color:#232b2e;}/*#0078d1*/ /*4ea770*/
+#menu li:hover {background-color:#75919C;}
 #menu li a {height:46px; width:100%; line-height:46px; color:#676767; text-decoration:none; text-align:left; display:inline-block; padding:0 13px 0 13px;}
 #menu li#logo a {text-align:center; margin-left:-13px;}
 #menu li a:hover {color:#fff;}
