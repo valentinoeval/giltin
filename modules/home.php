@@ -38,5 +38,3 @@
 	catch (PDOException $message) {
 		die("Impossible d'accéder à la base de données");
 	}
-
-	//$_SESSION['id']

@@ -161,10 +161,11 @@ tr {
 }
 #menu li#logo {width:250px; margin:0 -4px 0 -40px;}
 #menu li#user {position:absolute; right:0px; min-width:191px;}
-#menu li:hover {background-color:#4ea770;}/*#0078d1*/
+#menu li:hover {background-color:#232b2e;}/*#0078d1*/ /*4ea770*/
 #menu li a {height:46px; width:100%; line-height:46px; color:#fff; text-decoration:none; text-align:left; display:inline-block; padding:0 13px 0 13px;}
 #menu li#logo a {text-align:center; margin-left:-13px;}
-#menu li a:hover {color:#dadada;}
+#menu li a:hover {color:#fff;}
+#menu li#active {background-color:#70bc99;}
 /* tous les icone dans le menu */
 #menu li a span#imgMenu {width:26px; height:46px; position:relative; display:inline-block; vertical-align:middle; border:none; margin-right:8px;}
 #menu li a span#imgMenu img {width:26px; height:26px; position:absolute; top:10px; left:0;}
@@ -175,7 +176,7 @@ tr {
 #menu li a span#avatarMenu {width:46px; height:46px; bottom:1px; position:relative; display:inline-block; vertical-align:middle; border:none; margin:0 8px 0 -13px;}
 #menu li a span#avatarMenu img {width:46px; height:46px; position:absolute; left:0;}
 /* sous menu */
-#menu li ul {display:none; width:105px; background-color:#4ea770; border-radius:0px 0px 3px 3px; border-bottom:2px solid #3a7d54; border-top:2px solid #555; position:absolute;}/*border-bottom:2px solid #00528e; border-top:2px solid #0078d1;*/
+#menu li ul {display:none; width:105px; background-color:#70bc99; border-radius:0px 0px 3px 3px; border-bottom:2px solid #4ea770; border-top:2px solid #555; position:absolute;}/*border-bottom:2px solid #00528e; border-top:2px solid #0078d1;*/
 #menu li#user ul {margin-left:46px;}
 #menu li:hover ul {
 	display:block;
@@ -186,7 +187,7 @@ tr {
 }
 #menu li ul li, #menu li ul li:first-child {width:145px; margin:0 0 0 -40px; padding:0; height:30px; line-height:30px;}
 #menu li ul li a {height:30px; line-height:30px; width:100%; display:inline-block; text-align:left; font-size:15px;}
-#menu li:hover ul li:hover {background-color:#3a7d54;}
+#menu li:hover ul li:hover {background-color:#5D9C7F;}/*3a7d54*/
 /* icones sous menu Options*/
 /*#menu li ul li.dump {background-image:url('images/dump.png');}
 #menu li ul li.settings {list-style-image:url('images/settings.png');}
@@ -683,16 +684,19 @@ tr {
 		.panel-body {
 			background-color:#fafafa;
 		}
-			.panel-body table {
-				width:100%;
-				margin:0;
+			.panel-body-content {
+				padding:15px;
 			}
-				.panel-body tr:nth-child(odd){
-					background-color:#fefefe;
+				.panel-body table {
+					width:100%;
+					margin:0;
 				}
-			.panel-body p {
-				margin:15px;
-			}
+					.panel-body tr:nth-child(odd){
+						background-color:#fefefe;
+					}
+				.panel-body p {
+					margin:15px;
+				}
 	/* galerie des avatars */
 	.avatar_list {
 		width:180px;
