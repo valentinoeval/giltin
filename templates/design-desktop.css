@@ -13,9 +13,14 @@ body {
 	#mois li:hover {display:block; cursor:pointer;}
 	#mois li #current_mounth {color:#909090; text-decoration:none; display:block; position:relative; height:28px; width:115px; padding:5px 12px;}
 	#mois li #current_mounth:hover {color:#5fc9f0;}
-	#mois li #imgMenuPlus {position:relative; float:right; top:10px; right:24px;}
+	#mois li .imgMenuPlus {position:relative; float:right; top:10px; right:24px;}
 	#mois li > ul {display:none; width:75px; position:absolute; background-color:#f9f9f9; text-align:left; margin-top:-1px; border-radius:0px 0px 3px 3px; border-bottom:2px solid #d8d8d8;}
 	#mois li:hover > ul {/*display:block;*/}
+	#mois li ul #current_mounth img {
+		-webkit-transition:-webkit-transform 0.2s ease-in-out;
+		-moz-transition:-moz-transform 0.2s ease-in-out;
+		transition:transform 0.2s ease-in-out;
+	}
 	#mois li > ul li {height:28px; width:97px; line-height:28px; font-size:18px; margin-left:-40px; padding:0;}
 	#mois li > ul li a {color:#909090; display:block; font-size:15px; width:100%; padding:0 8px 0 10px;}
 	#mois li:hover > ul li a:hover {color:#ffffff; background-color:#a0a0a0}
@@ -158,8 +163,8 @@ h3 {
 #menu li a span#imgMenu {width:26px; height:46px; position:relative; display:inline-block; vertical-align:middle; border:none; margin-right:8px;}
 #menu li a span#imgMenu img {width:26px; height:26px; position:absolute; top:10px; left:0;}
 /* image de fleche ves le bas */
-#menu li a span#imgMenuPlus {width:11px; height:8px; bottom:8px; position:relative; display:inline-block; vertical-align:middle; border:none; margin-left:8px;}
-#menu li a span#imgMenuPlus img {width:11px; height:8px; position:absolute; top:7px; left:0;}
+#menu li a span.imgMenuPlus {width:11px; height:8px; bottom:8px; position:relative; display:inline-block; vertical-align:middle; border:none; margin-left:8px;}
+#menu li a span.imgMenuPlus img {width:11px; height:8px; position:absolute; top:7px; left:0;}
 /* avatar dans le menu */
 #menu li a span#avatarMenu {width:46px; height:46px; bottom:1px; position:relative; display:inline-block; vertical-align:middle; border:none; margin:0 8px 0 -13px;}
 #menu li a span#avatarMenu img {width:46px; height:46px; position:absolute; left:0;}

@@ -3,14 +3,14 @@
 		<ul>
 			<li id="logo"><a href="./"><span id="imgMenu"><img alt="Logo" src="templates/images/logo.png" /></span>Giltin'</a></li>
 			<li><a href="?m=add_op"><span id="imgMenu"><img alt="add" src="templates/images/add.png" /></span>Ajouter</a></li>
-			<li><a href="#">Comptes&nbsp;<span id="imgMenuPlus"><img alt="Plus" src="templates/images/plus.png" /></span></a>
+			<li><a href="#">Comptes&nbsp;<span class="imgMenuPlus"><img alt="Plus" src="templates/images/plus.png" /></span></a>
 				<ul>
 					<?php while ($datas_accounts_menu=$req_accounts_menu->fetch(PDO::FETCH_ASSOC)) : ?>
 						<li><a href="?m=view_op&account=<?php echo $datas_accounts_menu['id_compte']; ?>"><?php echo $datas_accounts_menu['nom']; ?></a></li>
 					<?php endwhile; ?>
 				</ul>
 			</li>
-			<li><a href="#">Options&nbsp;<span id="imgMenuPlus"><img alt="Plus" src="templates/images/plus.png" /></span></a>
+			<li><a href="#">Options&nbsp;<span class="imgMenuPlus"><img alt="Plus" src="templates/images/plus.png" /></span></a>
 				<ul>
 					<?php if ($_SESSION['rights']==-2 or $_SESSION['rights']==-1) : ?>
 						<li class="settings"><a href="?m=admin">Administration</a></li>

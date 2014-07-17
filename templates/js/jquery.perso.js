@@ -70,8 +70,19 @@ $(document).ready(function() {
 	//affichage de la liste de mois de l'année lors du clique sur le bouton
 	$('.button_mounth').toggle(function() {
 		$('#sub_mois').css({'display' : 'block'});
-		$('#sub_mois').slideDown(500);
+		$('#current_mounth img').css({
+			"-webkit-transform" : "rotate(-180deg)",
+			"-moz-transform" : "rotate(-180deg)",
+			"-o-transform" : "rotate(-180deg)",
+			"transform" : "rotate(-180deg)"
+		});
 	}, function() {
 		$('#sub_mois').css({'display' : 'none'});
+		$('#current_mounth img').css({
+			"-webkit-transform" : "rotate(0deg)",
+			"-moz-transform" : "rotate(0deg)",
+			"-o-transform" : "rotate(0deg)",
+			"transform" : "rotate(0deg)"
+		});
 	});
 });
