@@ -127,7 +127,8 @@ tr {
 }
 
 /******* CAS SPECIFIQUES *******/
-.menu {width:100%; height:46px; background-color:#fff; margin-top:0px; position:relative; z-index:1000;}
+.menu {width:100%; height:46px; background-color:#fff; top:0; position:fixed; z-index:1000;}
+.menu ul {margin-top:0px;}
 .menu li {
 	width:auto;
 	height:46px;
@@ -212,7 +213,7 @@ tr {
 			}
 #content {
 	margin:25px 0 0 250px;
-	padding:0 15px;
+	padding:45px 15px 0 15px;
 }
 	#message {
 		width:400px;
@@ -622,7 +623,7 @@ tr {
 		margin-bottom:15px;
 	}
 	.tablet_user {
-		padding:0 10px 10px 10px;
+		padding:10px;
 	}
 		.clip_task {
 			position:relative;

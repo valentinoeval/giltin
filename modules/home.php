@@ -11,7 +11,7 @@
 	else
 		header('location:index.php');
 
-	echo '<section cellspacing="0" cellpadding="0" class="tablet panel graphic">
+	echo '<section class="tablet panel graphic">
 			<section class="panel-header"><span>Activité depuis le début de l\'année</span></section>
 			<section class="panel-body">
 				[ DIAGRAMME ]<br /><br />[ DIAGRAMME ]<br /><br />[ DIAGRAMME ]<br /><br />[ DIAGRAMME ]<br /><br />[ DIAGRAMME ]<br /><br />[ DIAGRAMME ]<br /><br />[ DIAGRAMME ]
@@ -22,10 +22,10 @@
 		$bddlog=new PDO($bdd, $bdduser, $bddmdp);
 		$req=$bddlog->query('SELECT * FROM giltin_list_comptes WHERE id_user='.$_SESSION['id']);
 		while ($accounts=$req->fetch(PDO::FETCH_ASSOC)) {
-			echo '<section cellspacing="0" cellpadding="0" class="tablet panel">
+			echo '<section class="tablet panel">
 					<section class="panel-header"><a href="?m=view_op&account='.$accounts['id_compte'].'"" title="Visionnez votre compte \''.$accounts['nom'].'\'"><span><i class="fa fa-money"></i>&nbsp;'.$accounts['nom'].'</span></a></section>
 					<section class="panel-body">
-						<table class="tList">
+						<table cellspacing="0" cellpadding="0" class="tList">
 							<tbody>';
 							$getOperations=$bddlog->query('SELECT * FROM giltin_comptes_'.$_SESSION['id'].' WHERE id_compte='.$accounts['id_compte'].'  ORDER BY op_date DESC LIMIT 5');
 							while ($operations=$getOperations->fetch(PDO::FETCH_ASSOC)) {
