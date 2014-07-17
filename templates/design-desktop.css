@@ -694,11 +694,18 @@ tr {
 					margin:0;
 				}
 					.panel-body tr:nth-child(odd){
-						background-color:#fefefe;
+						background-color:#fbfbfb;
+					}
+					.panel-body tr:hover {
+						background-color:#e6e6e6;
+						color:#888888;
 					}
 				.panel-body p {
 					margin:15px;
 				}
+			.graphic-container {
+				background-color:#00aacc;
+			}
 	.graphic {
 		width:60%;
 	}

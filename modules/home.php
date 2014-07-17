@@ -12,9 +12,11 @@
 		header('location:index.php');
 
 	echo '<section class="tablet panel graphic">
-			<section class="panel-header"><span>Activité depuis le début de l\'année</span></section>
+			<section class="panel-header"><span><i class="fa fa-history"></i>&nbsp;&nbsp;Graphique d\'activité depuis le début de l\'année</span></section>
 			<section class="panel-body">
+				<section class="graphic-container">
 				[ DIAGRAMME ]<br /><br />[ DIAGRAMME ]<br /><br />[ DIAGRAMME ]<br /><br />[ DIAGRAMME ]<br /><br />[ DIAGRAMME ]<br /><br />[ DIAGRAMME ]<br /><br />[ DIAGRAMME ]
+				</section>
 			</section>
 		</section>';
 
@@ -23,7 +25,7 @@
 		$req=$bddlog->query('SELECT * FROM giltin_list_comptes WHERE id_user='.$_SESSION['id']);
 		while ($accounts=$req->fetch(PDO::FETCH_ASSOC)) {
 			echo '<section class="tablet panel">
-					<section class="panel-header"><a href="?m=view_op&account='.$accounts['id_compte'].'"" title="Visionnez votre compte \''.$accounts['nom'].'\'"><span><i class="fa fa-money"></i>&nbsp;'.$accounts['nom'].'</span></a></section>
+					<section class="panel-header"><a href="?m=view_op&account='.$accounts['id_compte'].'"" title="Visionnez votre compte \''.$accounts['nom'].'\'"><span><i class="fa fa-money"></i>&nbsp;&nbsp;'.$accounts['nom'].'</span></a></section>
 					<section class="panel-body">
 						<table cellspacing="0" cellpadding="0" class="tList">
 							<tbody>';
