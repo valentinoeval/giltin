@@ -19,7 +19,7 @@
 					<li class="settings"><a href="?m=settings">Param&egrave;tres</a></li>
 				</ul>
 			</li>
-			<li id="user"><a href="#"><span id="avatarMenu"><img alt="Avatar" src="<?php echo $_SESSION['avatar_mini']; ?>" /></span> <?php echo $_SESSION['nom']; ?></a>
+			<li id="user"><a href="#"><span id="avatarMenu"><img alt="Avatar" src="<?php echo $_SESSION['avatar_mini']; ?>" /></span> <?php echo $_SESSION['nom']; ?>&nbsp;<span class="imgMenuPlus"><img alt="Plus" src="templates/images/plus.png" /></span></a>
 				<ul>
 					<li><a href="?m=user">Mes informations</a></li>
 					<li><a href="?m=aboutus">&Agrave; propos</a></li>
