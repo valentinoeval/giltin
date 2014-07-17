@@ -160,7 +160,7 @@ tr {
 #menu li a span#avatarMenu {width:46px; height:46px; bottom:1px; position:relative; display:inline-block; vertical-align:middle; border:none; margin:0 8px 0 -13px;}
 #menu li a span#avatarMenu img {width:42px; height:42px; position:absolute; left:2px; top:2px; border-radius:24px;}
 /* sous menu */
-#menu li ul {display:none; width:105px; background-color:#70bc99; border-radius:0px 0px 3px 3px; border-bottom:2px solid #4ea770; border-top:2px solid #555; position:absolute;}/*border-bottom:2px solid #00528e; border-top:2px solid #0078d1;*/
+#menu li ul {display:none; width:105px; background-color:#70bc99; border-radius:0px 0px 3px 3px; border-bottom:2px solid #4ea770; position:absolute;}
 #menu li#user ul {margin-left:46px;}
 #menu li:hover ul {
 	display:block;
@@ -622,6 +622,7 @@ tr {
 		-moz-border-radius:4px;
 		-o-border-radius:4px;
 		border-radius:4px;
+		margin-bottom:15px;
 	}
 	.tablet_user {
 		padding:0 10px 10px 10px;
@@ -664,6 +665,7 @@ tr {
 				}
 	.panel {
 		width:30%;
+		min-width:290px;
 		float:left;
 		margin-right:15px;
 	}
@@ -676,15 +678,15 @@ tr {
 			border-radius:4px 4px 0 0;
 			padding:12px 0;
 		}
+			.panel-header span {
+				color:#404040;
+				margin:0 15px;
+			}
 			.panel-header a {
 				text-decoration:none;
 			}
-				.panel-header span {
-					color:#404040;
-					margin:0 15px;
-				}
 		.panel-body {
-			background-color:#fafafa;
+			background-color:#fff;
 		}
 			.panel-body-content {
 				padding:15px;
@@ -699,6 +701,9 @@ tr {
 				.panel-body p {
 					margin:15px;
 				}
+	.graphic {
+		width:60%;
+	}
 	/* galerie des avatars */
 	.avatar_list {
 		width:180px;

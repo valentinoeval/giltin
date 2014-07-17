@@ -11,6 +11,13 @@
 	else
 		header('location:index.php');
 
+	echo '<section cellspacing="0" cellpadding="0" class="tablet panel graphic">
+			<section class="panel-header"><span>Activité depuis le début de l\'année</span></section>
+			<section class="panel-body">
+				[ DIAGRAMME ]<br /><br />[ DIAGRAMME ]<br /><br />[ DIAGRAMME ]<br /><br />[ DIAGRAMME ]<br /><br />[ DIAGRAMME ]<br /><br />[ DIAGRAMME ]<br /><br />[ DIAGRAMME ]
+			</section>
+		</section>';
+
 	try {
 		$bddlog=new PDO($bdd, $bdduser, $bddmdp);
 		$req=$bddlog->query('SELECT * FROM giltin_list_comptes WHERE id_user='.$_SESSION['id']);
