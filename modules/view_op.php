@@ -87,7 +87,7 @@
 			<button class="button_mounth">
 				<ul id="mois">
 					<li><span id="current_mounth">'.nb2month($m).'<span id="imgMenuPlus"><img alt="Plus" src="templates/images/plus.png" /></span></span>
-						<ul data-hidden="true">
+						<ul id="sub_mois" data-hidden="true">
 							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=01">Janvier</a></li>
 							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=02">F&eacute;vrier</a></li>
 							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=03">Mars</a></li>

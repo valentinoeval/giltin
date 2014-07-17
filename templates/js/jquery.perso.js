@@ -69,18 +69,14 @@ $(document).ready(function() {
 
 	//affichage de la liste de mois de l'année lors du clique sur le bouton
 	$('.button_mounth').click(function() {
-		var hidden=$('#mois li ul').attr('data-hidden');
-		console.log(hidden);
-		if (hidden==true) {
-			$('#mois li > ul').css({"display" : "block"});
-			$('#mois li > ul').attr("data", "false");
+		var hidden=$('#sub_mois').attr('data-hidden');
+		if (hidden==true) {console.log('caché -> non caché');
+			$('#sub_mois').css({"display" : "block"});
+			$('#sub_mois').attr("data-hidden", "false");
 		}
-	});
-	$('.button_mounth').click(function() {
-		var hidden=$('#mois li ul').attr('data-hidden');
-		if (hidden==false) {
-			$('#mois li > ul').css({"display" : "none"});
-			$('#mois li > ul').attr("data", "true");
+		else if (hidden==false) {console.log('non caché -> caché');
+			$('#sub_mois').css({"display" : "none"});
+			$('#sub_mois').attr("data-hidden", "true");
 		}
 	});
 });
