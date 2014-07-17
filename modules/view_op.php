@@ -122,8 +122,8 @@
 		</section>';
 
 	//affichage des opérations bancaires récupérées de la BDD
-	echo '<table cellspacing="0" cellpadding="0" id="tList">
-			<tr id="tHeader">
+	echo '<table cellspacing="0" cellpadding="0" class="tList">
+			<tr class="tHeader">
 				<td></td>
 				<td class="nom">Nom de l\'op&eacute;ration bancaire</td>
 				<td class="date">Date</td>

@@ -232,32 +232,32 @@ tr {
 	.conteneur_options span.info {
 		color:#37a3e8;
 	}
-	#tList {
+	.tList {
 		/*min-width:850px;*/
 		margin:15px 0 15px 0;
 		width:100%;
 	}
-		#tList tr#tHeader {
+		.tList tr.tHeader {
 			font-size:18px;
 			background-color:#a8adb3;
 			height:34px;
 			color:#ffffff;
 		}
-		#tList tr {
+		.tList tr {
 			height:30px;
 		}
-		#tList tr:hover {
+		.tList tr:hover {
 			background-color:#e6e6e6;
 			color:#888888;
 		}
-		#tList tr.impair {
+		.tList tr.impair {
 			background-color:#f5f5f5;
 		}
-		#tList tr.impair:hover {
+		.tList tr.impair:hover {
 			background-color:#e6e6e6;
 		}
 			/* bouton ajouter com */
-			#tList tr .newcom {
+			.tList tr .newcom {
 				width:16px;
 				height:16px;
 				background-image:url('images/add_com.png');
@@ -265,11 +265,11 @@ tr {
 				filter:alpha(opacity=30);
 				-moz-opacity:0.3;
 			}
-				#tList tr .newcom a {
+				.tList tr .newcom a {
 					width:16px;
 					height:16px;
 				}
-			#tList tr:hover .newcom {
+			.tList tr:hover .newcom {
 				width:16px;
 				height:16px;
 				opacity:1.0;
@@ -277,7 +277,7 @@ tr {
 				-moz-opacity:1.0;
 			}
 			/* bouton editer */
-			#tList tr .edit {
+			.tList tr .edit {
 				width:16px;
 				height:16px;
 				background-image:url('images/edit.png');
@@ -285,11 +285,11 @@ tr {
 				filter:alpha(opacity=30);
 				-moz-opacity:0.3;
 			}
-				#tList tr .edit a {
+				.tList tr .edit a {
 					width:16px;
 					height:16px;
 				}
-			#tList tr:hover .edit {
+			.tList tr:hover .edit {
 				width:16px;
 				height:16px;
 				opacity:1.0;
@@ -297,7 +297,7 @@ tr {
 				-moz-opacity:1.0;
 			}
 			/* bouton suppression */
-			#tList tr .del {
+			.tList tr .del {
 				width:16px;
 				height:16px;
 				background-image:url('images/del.png');
@@ -305,11 +305,11 @@ tr {
 				filter:alpha(opacity=30);
 				-moz-opacity:0.3;
 			}
-				#tList tr .del a {
+				.tList tr .del a {
 					width:16px;
 					height:16px;
 				}
-			#tList tr:hover .del {
+			.tList tr:hover .del {
 				width:16px;
 				height:16px;
 				opacity:1.0;
