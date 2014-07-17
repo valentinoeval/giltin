@@ -16,7 +16,7 @@
 		$req=$bddlog->query('SELECT * FROM giltin_list_comptes WHERE id_user='.$_SESSION['id']);
 		while ($accounts=$req->fetch(PDO::FETCH_ASSOC)) {
 			echo '<section cellspacing="0" cellpadding="0" class="tablet panel">
-					<section class="panel-header"><a href="?m=view_op&account='.$accounts['id_compte'].'"><span><i class="fa fa-money"></i>&nbsp;'.$accounts['nom'].'</span></a></section>
+					<section class="panel-header"><a href="?m=view_op&account='.$accounts['id_compte'].'"" title="Visionnez votre compte \''.$accounts['nom'].'\'"><span><i class="fa fa-money"></i>&nbsp;'.$accounts['nom'].'</span></a></section>
 					<section class="panel-body">
 						<table class="tList">
 							<tbody>';
