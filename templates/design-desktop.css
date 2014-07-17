@@ -667,7 +667,7 @@ h3 {
 	}
 		.panel-header {
 			width:100%;
-			background-color:#bababa;
+			background-color:#bfbfbf;
 			-webkit-border-radius:4px 4px 0 0;
 			-moz-border-radius:4px 4px 0 0;
 			-o-border-radius:4px 4px 0 0;
@@ -675,7 +675,7 @@ h3 {
 			padding:12px 0;
 		}
 			.panel-header span {
-				color:#fff;
+				color:#404040;
 				margin:0 15px;
 			}
 	/* galerie des avatars */
