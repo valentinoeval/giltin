@@ -14,6 +14,10 @@
 		<script type="text/javascript" src="templates/js/jquery.perso.js"></script>
 		<script type="text/javascript" src="templates/js/functions.js"></script>
 		<link rel="icon" type="image/ico" href="templates/images/fav.ico">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		<title>Giltin'</title>
 	</head>
 	<body>
