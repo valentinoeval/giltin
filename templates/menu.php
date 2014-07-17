@@ -1,8 +1,8 @@
 <?php if (isset($_SESSION['login']) and !empty($_SESSION['login'])) : ?>
-	<div id="menu">
+	<div class="menu">
 		<ul>
-			<li id="logo"><a href="./"><span id="imgMenu"><img alt="Logo" src="templates/images/logo.png" /></span>Giltin'</a></li>
-			<li><a href="?m=add_op"><span id="imgMenu"><img alt="add" src="templates/images/add.png" /></span>Ajouter</a></li>
+			<li class="logo"><a href="./"><span class="imgMenu"><img alt="Logo" src="templates/images/logo.png" /></span>Giltin'</a></li>
+			<li><a href="?m=add_op"><span class="imgMenu"><img alt="add" src="templates/images/add.png" /></span>Ajouter</a></li>
 			<li><a href="#">Comptes&nbsp;<span class="imgMenuPlus"><img alt="Plus" src="templates/images/plus.png" /></span></a>
 				<ul>
 					<?php while ($datas_accounts_menu=$req_accounts_menu->fetch(PDO::FETCH_ASSOC)) : ?>
