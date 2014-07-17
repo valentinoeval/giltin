@@ -14,7 +14,7 @@ body {
 	#mois li #current_mounth {color:#909090; text-decoration:none; display:block; position:relative; height:28px; width:115px; padding:5px 12px;}
 	#mois li #current_mounth:hover {color:#5fc9f0;}
 	#mois li #imgMenuPlus {position:relative; float:right; top:10px; right:24px;}
-	#mois li > ul {display:none; width:75px; position:absolute; background-color:#f9f9f9; text-align:left; border-radius:0px 0px 3px 3px; border-bottom:2px solid #d8d8d8;}
+	#mois li > ul {display:none; width:75px; position:absolute; background-color:#f9f9f9; text-align:left; margin-top:-1px; border-radius:0px 0px 3px 3px; border-bottom:2px solid #d8d8d8;}
 	#mois li:hover > ul {/*display:block;*/}
 	#mois li > ul li {height:28px; width:97px; line-height:28px; font-size:18px; margin-left:-40px; padding:0;}
 	#mois li > ul li a {color:#909090; display:block; font-size:15px; width:100%; padding:0 8px 0 10px;}

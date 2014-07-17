@@ -69,11 +69,9 @@ $(document).ready(function() {
 
 	//affichage de la liste de mois de l'année lors du clique sur le bouton
 	$('.button_mounth').toggle(function() {
-		$('#sub_mois').css({
-			'display' : 'block',
-			'transition' : 'all .25s ease-in'
-		});
+		$('#sub_mois').css({'display' : 'block'});
+		$('#sub_mois').slideDown(500);
 	}, function() {
-		$('#sub_mois').css({"display" : "none"});
+		$('#sub_mois').css({'display' : 'none'});
 	});
 });
