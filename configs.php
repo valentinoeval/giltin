@@ -21,6 +21,7 @@
 	$edit=true;
 	$dump=true;
 	$gallery=true;
+	$home=true;
 	$pari=true;
 	$search=true;
 	$settings=true;

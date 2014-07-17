@@ -101,6 +101,9 @@ h3 {
 	font-size:18pt;
 	color:#5b7586;
 }
+tr {
+	height:30px;
+}
 .color_credit {color:#11c71e;}
 .color_debit {color:#ce2020;}
 .button_link {
@@ -613,7 +616,6 @@ h3 {
 	/* module user */
 	.tablet {
 		width:830px;
-		margin-top:40px;
 		background-color:#f0f0f0;
 		border-bottom:2px solid #b5b5b5;
 		-webkit-border-radius:4px;
@@ -667,7 +669,7 @@ h3 {
 	}
 		.panel-header {
 			width:100%;
-			background-color:#bfbfbf;
+			background-color:#cfcfcf;
 			-webkit-border-radius:4px 4px 0 0;
 			-moz-border-radius:4px 4px 0 0;
 			-o-border-radius:4px 4px 0 0;
@@ -677,6 +679,18 @@ h3 {
 			.panel-header span {
 				color:#404040;
 				margin:0 15px;
+			}
+		.panel-body {
+			background-color:#fafafa;
+		}
+			.panel-body table {
+				width:100%;
+			}
+				.panel-body tr:nth-child(odd){
+					background-color:#fefefe;
+				}
+			.panel-body p {
+				margin:15px;
 			}
 	/* galerie des avatars */
 	.avatar_list {

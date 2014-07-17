@@ -1,31 +1,42 @@
 <?php
-	echo '<section class="tablet panel">
-			<section class="panel-header"><span>Activité du compte "Compte postale"</span></section>
-			<section class="panel-content"></section>
-			<section class="clear"></section><br>
-		</section>';
-	echo '<section class="tablet panel">
-			<section class="panel-header"><span>Activité du compte "Livret A"</span></section>
-			<section class="panel-content"></section>
-			<section class="clear"></section><br>
-		</section>';
-	echo '<section class="tablet panel">
-			<section class="panel-header"></section>
-			<section class="panel-content"></section>
-			<section class="clear"></section><br>
-		</section>';
-	echo '<section class="tablet panel">
-			<section class="panel-header"></section>
-			<section class="panel-content"></section>
-			<section class="clear"></section><br>
-		</section>';
-	echo '<section class="tablet panel">
-			<section class="panel-header"></section>
-			<section class="panel-content"></section>
-			<section class="clear"></section><br>
-		</section>';
-	echo '<section class="tablet panel">
-			<section class="panel-header"></section>
-			<section class="panel-content"></section>
-			<section class="clear"></section><br>
-		</section>';
+	//sécurisation du module
+	if (file_exists('uploads/'.$_SESSION['login'].'/key')) {
+		if (file_get_contents('uploads/'.$_SESSION['login'].'/key', NULL, NULL, 0, 100)==$_SESSION['key']) {
+			if (!isset($home) and $home!=true)
+				header('location:index.php');
+		}
+		else
+			header('location:index.php');
+	}
+	else
+		header('location:index.php');
+
+	try {
+		$bddlog=new PDO($bdd, $bdduser, $bddmdp);
+		$req=$bddlog->query('SELECT * FROM giltin_list_comptes WHERE id_user='.$_SESSION['id']);
+		while ($accounts=$req->fetch(PDO::FETCH_ASSOC)) {
+			echo '<section class="tablet panel">
+					<section class="panel-header"><span><i class="fa fa-money"></i>&nbsp;'.$accounts['nom'].'</span></section>
+					<section class="panel-body">
+						<table>
+							<tbody>';
+							$getOperations=$bddlog->query('SELECT * FROM giltin_comptes_'.$_SESSION['id'].' WHERE id_compte='.$accounts['id_compte'].'  ORDER BY op_date DESC LIMIT 5');
+							while ($operations=$getOperations->fetch(PDO::FETCH_ASSOC)) {
+								echo '<tr><td>'.$operations['nom'].'</td><td>';
+								if ($operations['type']=='c')
+									echo '<span class="color_credit">'; 
+								elseif ($operations['type']=='d')
+									echo '<span class="color_debit">';
+								echo $operations['montant'].' €</span></td></tr>';
+							}
+						echo '</tbody>
+						</table>
+					</section>
+				</section>';
+		}
+	}
+	catch (PDOException $message) {
+		die("Impossible d'accéder à la base de données");
+	}
+
+	//$_SESSION['id']
