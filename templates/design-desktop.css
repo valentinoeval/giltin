@@ -243,9 +243,6 @@ tr {
 			height:34px;
 			color:#ffffff;
 		}
-		.tList tr {
-			height:30px;
-		}
 		.tList tr:hover {
 			background-color:#e6e6e6;
 			color:#888888;
@@ -685,6 +682,7 @@ tr {
 		}
 			.panel-body table {
 				width:100%;
+				margin:0;
 			}
 				.panel-body tr:nth-child(odd){
 					background-color:#fefefe;
