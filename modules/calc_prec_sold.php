@@ -1,4 +1,4 @@
-<?php
+<?php 
 	//sécurisation du module
 	if (file_exists('uploads/'.$_SESSION['login'].'/key')) {
 		if (file_get_contents('uploads/'.$_SESSION['login'].'/key', NULL, NULL, 0, 100)==$_SESSION['key']) {

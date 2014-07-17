@@ -83,7 +83,7 @@
 					echo print_msg($_GET['msg']);	
 				//tests de validité du module appelé
 				if (!isset($_GET['m'])) {
-					//include("modules/home.php");
+					include("modules/home.php");
 				}
 				elseif ((isset($_GET['m']) and empty($_GET['m'])) or (isset($_GET['m']) and !file_exists("modules/".$_GET['m'].".php"))) {
 					header('location:?msg=module_not_exist');

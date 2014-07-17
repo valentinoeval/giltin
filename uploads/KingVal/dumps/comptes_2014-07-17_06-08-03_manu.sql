@@ -351,7 +351,7 @@ INSERT INTO `giltin_comptes_2` VALUES (424, '1', 'Protection Ipad Justine', '3',
 INSERT INTO `giltin_comptes_2` VALUES (425, '1', 'God of War Collection PS Vita', '3', '2014-06-25', 'd', 29.90, 1);
 INSERT INTO `giltin_comptes_2` VALUES (426, '1', 'Tubes', '3', '2014-06-28', 'd', 6.00, 1);
 INSERT INTO `giltin_comptes_2` VALUES (427, '1', 'Avance fioul Justine', '8', '2014-06-29', 'd', 20.01, 1);
-INSERT INTO `giltin_comptes_2` VALUES (428, '1', 'Solde pr&eacute;c&eacute;dent (Corrig&eacute;)', '12', '2014-07-01', 'c', 390.61, 1);
+INSERT INTO `giltin_comptes_2` VALUES (428, '1', 'Solde pr&eacute;c&eacute;dent (Corrig&eacute;)', '12', '2014-07-01', 'c', 390.61, 0);
 INSERT INTO `giltin_comptes_2` VALUES (429, '2', 'Solde pr&eacute;c&eacute;dent', '12', '2014-07-01', 'c', 2821.76, 1);
 INSERT INTO `giltin_comptes_2` VALUES (431, '1', 'Clp', '3', '2014-06-30', 'd', 13.00, 1);
 INSERT INTO `giltin_comptes_2` VALUES (432, '1', 'Speed Burger', '2', '2014-06-30', 'd', 21.40, 1);

@@ -16,13 +16,13 @@
 						<li class="settings"><a href="?m=admin">Administration</a></li>
 					<?php endif; ?>
 					<li class="dump"><a href="?m=dump">Dump BDD</a></li>
-					<li class="settings"><a href="?m=settings">Paramètres</a></li>
+					<li class="settings"><a href="?m=settings">Param&egrave;tres</a></li>
 				</ul>
 			</li>
 			<li id="user"><a href="#"><span id="avatarMenu"><img alt="Avatar" src="<?php echo $_SESSION['avatar_mini']; ?>" /></span> <?php echo $_SESSION['nom']; ?></a>
 				<ul>
 					<li><a href="?m=user">Mes informations</a></li>
-					<li><a href="?m=aboutus">A propos</a></li>
+					<li><a href="?m=aboutus">&Agrave; propos</a></li>
 					<li class="logout"><a href="logout.php">D&eacute;connexion</a></li>
 				</ul>
 			</li>
