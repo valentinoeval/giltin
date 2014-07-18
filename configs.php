@@ -19,7 +19,7 @@
 	$calc_prec_sold=true;
 	$deleter=true;
 	$edit=true;
-	$dump=true;
+	$export=true;
 	$gallery=true;
 	$home=true;
 	$pari=true;

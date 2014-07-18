@@ -675,6 +675,7 @@ tr {
 			-o-border-radius:4px 4px 0 0;
 			border-radius:4px 4px 0 0;
 			padding:12px 0;
+			border-bottom:1px solid #efefef;
 		}
 			.panel-header span {
 				color:#404040;

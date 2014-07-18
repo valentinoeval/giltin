@@ -2,7 +2,7 @@
 	//sécurisation du module
 	if (file_exists('uploads/'.$_SESSION['login'].'/key')) {
 		if (file_get_contents('uploads/'.$_SESSION['login'].'/key', NULL, NULL, 0, 100)==$_SESSION['key']) {
-			if (!isset($dump) and $dump!=true)
+			if (!isset($export) and $export!=true)
 				header('location:index.php');
 		}
 		else
@@ -44,7 +44,7 @@
 				$file_size=human_file_size($file_size_bytes);
 				//ajout dans la table backup du dump de la base
 				$bddlog->exec('INSERT INTO `giltin_backups` VALUES ("", "'.$_SESSION['id'].'", "'.$name_file.'", "'.$ad_date.'", "'.$file_size.'")');
-				header('location:?m=dump&msg=backup_dump');
+				header('location:?m=export&msg=backup_dump');
 			}
 			catch (PDOException $message) {
 				die("<div class='msgbad'>Echec d\'accès à la base de donn&eacute;es</div>");
@@ -60,7 +60,7 @@
 				$file=file_get_contents('uploads/'.$_SESSION['login'].'/dumps/'.$_GET['file'].'.sql');
 				echo $file;
 				$bddlog->exec($file);
-				header('location:?m=dump&msg=restore_dump');
+				header('location:?m=export&msg=restore_dump');
 			}
 			catch (PDOException $message) {
 				die("<div class='msgbad'>Erreur rencontr&eacute;e : ".$message->getMessage()."</div>");
@@ -74,7 +74,7 @@
 				$bddlog=new PDO($bdd, $bdduser, $bddmdp);
 
 				echo '<div class="conteneur_options">
-						<button class="button_link"><a href="?m=dump&dump=backup">Faire un backup de vos comptes</a></button>
+						<button class="button_link"><a href="?m=export&dump=backup">Faire un backup de vos comptes</a></button>
 					</div>
 				 	   <table cellspacing="0" cellpadding="0" id="tList">
 						<tr id="tHeader">
@@ -93,7 +93,7 @@
 							<td><span title="#'.$datas5['id'].'">'.$datas5['nom'].'</span></td>
 							<td>'.$datas5['ad_date'].'</td>
 							<td>'.$datas5['size'].'</td>
-							<td><a href="?m=dump&dump=restore&file='.$datas5['nom'].'">Restaurer</a></td>
+							<td><a href="?m=export&dump=restore&file='.$datas5['nom'].'">Restaurer</a></td>
 							<td>
 								<div class="del">
 									<img src="templates/images/empty.png" class="del_link" onclick="hydrating_form_dump('.$datas5['id'].', \''.$datas5['nom'].'\', \''.$url.'\')" title="Supprimer" />

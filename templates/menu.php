@@ -15,7 +15,7 @@
 					<?php if ($_SESSION['rights']==-2 or $_SESSION['rights']==-1) : ?>
 						<li class="settings"><a href="?m=admin">Administration</a></li>
 					<?php endif; ?>
-					<li class="dump"><a href="?m=dump">Dump BDD</a></li>
+					<li class="dump"><a href="?m=export">Export comptes</a></li>
 					<li class="settings"><a href="?m=settings">Param&egrave;tres</a></li>
 				</ul>
 			</li>
