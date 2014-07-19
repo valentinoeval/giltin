@@ -144,13 +144,14 @@ tr {
 .navbar li.logo:hover {background-color:#161b1d;}
 .navbar li#user {position:absolute; right:0px; min-width:191px;}
 .navbar li:hover {background-color:#75919C;}
+.navbar li.extend {top:-7px; position: relative;}
 .navbar li a {height:46px; width:100%; line-height:46px; color:#676767; text-decoration:none; text-align:left; display:inline-block; padding:0 13px 0 13px;}
 .navbar li#logo a {text-align:center; margin-left:-13px;}
 .navbar li a:hover {color:#fff;}
 .navbar li#active {background-color:#70bc99;}
 /* tous les icone dans le menu */
 .navbar li a span.imgMenu {width:26px; height:46px; position:relative; display:inline-block; vertical-align:middle; border:none; margin-right:8px;}
-.navbar li a span.imgMenu img {width:26px; height:26px; position:absolute; top:10px; left:0;}
+.navbar li a span.imgMenu img {width:26px; height:26px; position:absolute; top:9px; left:0;}
 /* image de fleche ves le bas */
 .navbar li a span.imgMenuPlus {width:11px; height:8px; bottom:8px; position:relative; display:inline-block; vertical-align:middle; border:none; margin-left:8px;}
 .navbar li a span.imgMenuPlus img {width:11px; height:8px; position:absolute; top:7px; left:0;}
@@ -169,7 +170,9 @@ tr {
 }
 .navbar li ul li, .navbar li ul li:first-child {width:145px; margin:0 0 0 -40px; padding:0; height:30px; line-height:30px;}
 .navbar li ul li a {height:30px; line-height:30px; width:100%; display:inline-block; text-align:left; font-size:15px;}
-.navbar li:hover ul li:hover {background-color:#5D9C7F;}/*3a7d54*/
+.navbar li:hover ul li:hover {background-color:#5D9C7F;}
+.navbar button {background:none; border:none; top:9px; position: relative;}
+.navbar i {color:#676767; font-size:1.6em;}
 
 #mois {margin:0; padding:0; list-style:none; width:115px; height:28px; display:block; /*background-image:url('images/spinner.png');*/}
 #mois li {line-height:28px; list-style:inside none; padding:0; float:left; display:block; position:relative;}
