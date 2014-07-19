@@ -127,9 +127,9 @@ tr {
 }
 
 /******* CAS SPECIFIQUES *******/
-.menu {width:100%; height:46px; background-color:#fff; top:0; position:fixed; z-index:1000;}
-.menu ul {margin-top:0px;}
-.menu li {
+.navbar {width:100%; height:46px; background-color:#fff; top:0; position:fixed; z-index:1000;}
+.navbar ul {margin-top:0px;}
+.navbar li {
 	width:auto;
 	height:46px;
 	list-style:none;
@@ -139,37 +139,37 @@ tr {
 	-o-transition:all .07s ease-in;
 	transition:all .07s ease-in;
 }
-.menu li.logo {width:250px; margin:0 -4px 0 -40px; background-color:#232b2e;}
-.menu li.logo a {color:#fff;}
-.menu li.logo:hover {background-color:#161b1d;}
-.menu li#user {position:absolute; right:0px; min-width:191px;}
-.menu li:hover {background-color:#75919C;}
-.menu li a {height:46px; width:100%; line-height:46px; color:#676767; text-decoration:none; text-align:left; display:inline-block; padding:0 13px 0 13px;}
-.menu li#logo a {text-align:center; margin-left:-13px;}
-.menu li a:hover {color:#fff;}
-.menu li#active {background-color:#70bc99;}
+.navbar li.logo {width:250px; margin:0 -4px 0 -40px; background-color:#232b2e;}
+.navbar li.logo a {color:#fff;}
+.navbar li.logo:hover {background-color:#161b1d;}
+.navbar li#user {position:absolute; right:0px; min-width:191px;}
+.navbar li:hover {background-color:#75919C;}
+.navbar li a {height:46px; width:100%; line-height:46px; color:#676767; text-decoration:none; text-align:left; display:inline-block; padding:0 13px 0 13px;}
+.navbar li#logo a {text-align:center; margin-left:-13px;}
+.navbar li a:hover {color:#fff;}
+.navbar li#active {background-color:#70bc99;}
 /* tous les icone dans le menu */
-.menu li a span.imgMenu {width:26px; height:46px; position:relative; display:inline-block; vertical-align:middle; border:none; margin-right:8px;}
-.menu li a span.imgMenu img {width:26px; height:26px; position:absolute; top:10px; left:0;}
+.navbar li a span.imgMenu {width:26px; height:46px; position:relative; display:inline-block; vertical-align:middle; border:none; margin-right:8px;}
+.navbar li a span.imgMenu img {width:26px; height:26px; position:absolute; top:10px; left:0;}
 /* image de fleche ves le bas */
-.menu li a span.imgMenuPlus {width:11px; height:8px; bottom:8px; position:relative; display:inline-block; vertical-align:middle; border:none; margin-left:8px;}
-.menu li a span.imgMenuPlus img {width:11px; height:8px; position:absolute; top:7px; left:0;}
+.navbar li a span.imgMenuPlus {width:11px; height:8px; bottom:8px; position:relative; display:inline-block; vertical-align:middle; border:none; margin-left:8px;}
+.navbar li a span.imgMenuPlus img {width:11px; height:8px; position:absolute; top:7px; left:0;}
 /* avatar dans le menu */
-.menu li a span#avatarMenu {width:46px; height:46px; bottom:1px; position:relative; display:inline-block; vertical-align:middle; border:none; margin:0 8px 0 -13px;}
-.menu li a span#avatarMenu img {width:42px; height:42px; position:absolute; left:2px; top:2px; border-radius:24px;}
+.navbar li a span#avatarMenu {width:46px; height:46px; bottom:1px; position:relative; display:inline-block; vertical-align:middle; border:none; margin:0 8px 0 -13px;}
+.navbar li a span#avatarMenu img {width:42px; height:42px; position:absolute; left:2px; top:2px; border-radius:24px;}
 /* sous menu */
-.menu li ul {display:none; width:105px; background-color:#70bc99; border-radius:0px 0px 3px 3px; border-bottom:2px solid #4ea770; position:absolute;}
-.menu li#user ul {margin-left:46px;}
-.menu li:hover ul {
+.navbar li ul {display:none; width:105px; background-color:#70bc99; border-radius:0px 0px 3px 3px; border-bottom:2px solid #4ea770; position:absolute;}
+.navbar li#user ul {margin-left:46px;}
+.navbar li:hover ul {
 	display:block;
 	-webkit-transition:all .07s ease-in;
 	-moz-transition:all .07s ease-in;
 	-o-transition:all .07s ease-in;
 	transition:all .07s ease-in;
 }
-.menu li ul li, .menu li ul li:first-child {width:145px; margin:0 0 0 -40px; padding:0; height:30px; line-height:30px;}
-.menu li ul li a {height:30px; line-height:30px; width:100%; display:inline-block; text-align:left; font-size:15px;}
-.menu li:hover ul li:hover {background-color:#5D9C7F;}/*3a7d54*/
+.navbar li ul li, .navbar li ul li:first-child {width:145px; margin:0 0 0 -40px; padding:0; height:30px; line-height:30px;}
+.navbar li ul li a {height:30px; line-height:30px; width:100%; display:inline-block; text-align:left; font-size:15px;}
+.navbar li:hover ul li:hover {background-color:#5D9C7F;}/*3a7d54*/
 
 #mois {margin:0; padding:0; list-style:none; width:115px; height:28px; display:block; /*background-image:url('images/spinner.png');*/}
 #mois li {line-height:28px; list-style:inside none; padding:0; float:left; display:block; position:relative;}

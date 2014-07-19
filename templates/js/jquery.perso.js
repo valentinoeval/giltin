@@ -85,4 +85,16 @@ $(document).ready(function() {
 			"transform" : "rotate(0deg)"
 		});
 	});
+
+	//systemm rétractation de la barre de gauche
+	$('.btn-navbar').toggle(function() {
+		alert('test');
+		$('#barLeft').css({'display' : 'none'});
+		$('.logo').css({'width' : 'auto'});
+		$('#content').css({'margin' : '25px 0 0 0'});
+	}, function() {
+		$('#barLeft').css({'display' : 'block'});
+		$('.logo').css({'width' : '250px'});
+		$('#content').css({'margin' : '25px 0 0 250px'});
+	});
 });

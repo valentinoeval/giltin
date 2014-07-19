@@ -9,10 +9,9 @@
 <html lang="fr-FR">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="templates/design-desktop<?php if ((!isset($_SESSION['login']) and empty($_SESSION['login'])) or (isset($_SESSION['login']) and empty($_SESSION['login']))) echo '-logout' ?>.css" type="text/css" />
 		<script type="text/javascript" src="templates/js/jquery-1.4.3.min.js"></script>
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 		<script type="text/javascript" src="templates/js/jquery.perso.js"></script>
 		<script type="text/javascript" src="templates/js/functions.js"></script>
 		<link rel="icon" type="image/ico" href="templates/images/fav.ico">
