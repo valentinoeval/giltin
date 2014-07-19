@@ -88,7 +88,6 @@ $(document).ready(function() {
 
 	//systemm rétractation de la barre de gauche
 	$('.btn-navbar').toggle(function() {
-		alert('test');
 		$('#barLeft').css({'display' : 'none'});
 		$('.logo').css({'width' : 'auto'});
 		$('#content').css({'margin' : '25px 0 0 0'});
