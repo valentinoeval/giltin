@@ -146,7 +146,7 @@ tr {
 .navbar li#user {position:absolute; right:0px; min-width:191px;}
 .navbar li:hover {background-color:#75919C;}
 .navbar li.extend {top:-7px; position: relative;}
-.navbar li a {height:46px; width:100%; line-height:46px; color:#676767; text-decoration:none; text-align:left; display:inline-block; padding:0 13px 0 13px;}
+.navbar li a {height:46px; width:100%; line-height:46px; color:#676767; text-decoration:none; text-align:left;  padding:0 13px 0 13px;}
 .navbar li#logo a {text-align:center; margin-left:-13px;}
 .navbar li a:hover {color:#fff;}
 .navbar li#active {background-color:#70bc99;}
@@ -203,6 +203,10 @@ tr {
 	position:fixed;
 	background-color:#3E4547;
 	z-index:3;
+	-webkit-transition:all .1s ease-in;
+	-moz-transition:all .1s ease-in;
+	-o-transition:all .1s ease-in;
+	transition:all .1s ease-in;
 }
 	#barLeft-content {
 		width:200px;

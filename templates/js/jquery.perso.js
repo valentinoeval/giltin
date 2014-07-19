@@ -88,13 +88,12 @@ $(document).ready(function() {
 
 	//systemm rétractation de la barre de gauche
 	$('.btn-navbar').toggle(function() {
-		$('#barLeft').css({'display' : 'none'});
-		$('.logo').css({'margin-top' : '-1px'});
+		$('#barLeft').css({'width' : '0', 'overflow' : 'hidden'});
 		$('.logo').html('<a href="./"><span class="imgMenu"><img alt="Logo" src="templates/images/logo.png" /></span></a>');
 		$('.logo').css({'width' : 'auto'});
 		$('#content').css({'margin' : '25px 0 0 0'});
 	}, function() {
-		$('#barLeft').css({'display' : 'block'});
+		$('#barLeft').css({'width' : '250px', 'overflow' : 'visible'});
 		$('.logo').html('<a href="./"><span class="imgMenu"><img alt="Logo" src="templates/images/logo.png" /></span>Giltin\'</a>');
 		$('.logo').css({'width' : '250px'});
 		$('#content').css({'margin' : '25px 0 0 250px'});
