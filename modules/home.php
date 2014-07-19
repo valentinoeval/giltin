@@ -22,7 +22,35 @@
 			<section class="panel-header"><span><i class="fa fa-history"></i>&nbsp;&nbsp;Graphique d\'activité depuis le début de l\'année</span></section>
 			<section class="panel-body">
 				<section class="graphic-container">';
-				
+				$mounths=$bddlog->query('SELECT * FROM giltin_comptes_'.$_SESSION['id'].' WHERE id_compte=1 AND op_date LIKE "2014%" ORDER BY op_date ASC');
+				$nb_mounth=1;
+				$income=0;
+				$spending=0;
+				$datas=array();
+				while ($op=$mounths->fetch(PDO::FETCH_ASSOC)) {
+					list($year, $mounth, $day)=explode('-', $op['op_date']);
+					$mounth=(int)$mounth;
+					if ($nb_mounth<$mounth) {
+						$datas[$nb_mounth]=array(
+							'income'	=> $income,
+							'spending'	=> $spending
+						);
+						$nb_mounth=$mounth;
+						$income=0;
+						$spending=0;
+					}
+					if ($op['montant']>0) {
+						$income+=$op['montant'];
+					}
+					else {
+						$spending+=$op['montant'];
+					}
+				}//die();
+				for ($i=1; $i<=12; $i++) {
+					if (isset($datas[$i])) {
+						echo 'Mois : '.$i.' Recettes : '.$datas[$i]['income'].'€ Dépenses : '.$datas[$i]['spending'].'€<br />';
+					}
+				}
 			echo '</section>
 			</section>
 		</section>';
