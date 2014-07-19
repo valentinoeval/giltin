@@ -39,7 +39,7 @@
 						$income=0;
 						$spending=0;
 					}
-					if ($op['montant']>0) {
+					if ($op['type']=='c') {
 						$income+=$op['montant'];
 					}
 					else {
