@@ -160,7 +160,7 @@ tr {
 .navbar li a span#avatarMenu {width:46px; height:46px; bottom:1px; position:relative; display:inline-block; vertical-align:middle; border:none; margin:0 8px 0 -13px;}
 .navbar li a span#avatarMenu img {width:42px; height:42px; position:absolute; left:2px; top:2px; border-radius:24px;}
 /* sous menu */
-.navbar li ul {display:none; width:105px; background-color:#70bc99; border-radius:0px 0px 3px 3px; border-bottom:2px solid #4ea770; position:absolute;}
+.navbar li ul {display:none; width:105px; background-color:#9dbfcc; border-radius:0px 0px 3px 3px; border-bottom:2px solid #4ea770; position:absolute;}
 .navbar li#user ul {margin-left:46px;}
 .navbar li:hover ul {
 	display:block;
