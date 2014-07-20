@@ -1,4 +1,4 @@
 <?php
 	session_start();
 	session_destroy();
-	header('location:index.php?msg=logout_done');
+	header('location:index.php');

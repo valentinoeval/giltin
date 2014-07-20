@@ -52,9 +52,6 @@
 		elseif ($code=='pass2') {
 			$message='<div class="msg_bad"><img src="templates/images/fail.png" /><span>Le mot de passe est incorrect</span><img id="close_msg" src="templates/images/non_verifie.png" title="Masquer" /><div class="clear"></div></div>';
 		}
-		elseif ($code=='logout_done') {
-			$message='<div class="msg_good"><img src="templates/images/done.png" /><span>Vous avez &eacute;t&eacute; d&eacute;connect&eacute; correctement</span><img id="close_msg" src="templates/images/non_verifie.png" title="Masquer" /><div class="clear"></div></div>';
-		}
 		elseif ($code=='blocked_account') {
 			$message='<div class="msg_bad"><img src="templates/images/fail.png" /><span>Vous ne pouvez pas vous connecter car votre compte est bloqu&eacute;<br />ou n\'est pas encore activ&eacute;</span><img id="close_msg" src="templates/images/non_verifie.png" title="Masquer" /><div class="clear"></div></div>';
 		}

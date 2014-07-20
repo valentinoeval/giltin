@@ -100,18 +100,18 @@ $(document).ready(function() {
 	});
 
 	//effet d'apparition du graphique
-	$('.graphic-m1').fadeTo(300, 1, function() {
-		$('.graphic-m2').fadeTo(300, 1, function() {
-			$('.graphic-m3').fadeTo(300, 1, function() {
-				$('.graphic-m4').fadeTo(300, 1, function() {
-					$('.graphic-m5').fadeTo(300, 1, function() {
-						$('.graphic-m6').fadeTo(300, 1, function() {
-							$('.graphic-m7').fadeTo(300, 1, function() {
-								$('.graphic-m8').fadeTo(300, 1, function() {
-									$('.graphic-m9').fadeTo(300, 1, function() {
-										$('.graphic-bar-container .m10').fadeTo(300, 1, function() {
-											$('.graphic-bar-container .m11').fadeTo(300, 1, function() {
-												$('.graphic-bar-container .m12').fadeTo(300, 1);
+	$('.graphic-m1').fadeTo(75, 1, function() {
+		$('.graphic-m2').fadeTo(75, 1, function() {
+			$('.graphic-m3').fadeTo(75, 1, function() {
+				$('.graphic-m4').fadeTo(75, 1, function() {
+					$('.graphic-m5').fadeTo(75, 1, function() {
+						$('.graphic-m6').fadeTo(75, 1, function() {
+							$('.graphic-m7').fadeTo(75, 1, function() {
+								$('.graphic-m8').fadeTo(75, 1, function() {
+									$('.graphic-m9').fadeTo(75, 1, function() {
+										$('.graphic-m10').fadeTo(75, 1, function() {
+											$('.graphic-m11').fadeTo(75, 1, function() {
+												$('.graphic-m12').fadeTo(75, 1);
 											});
 										});
 									});
