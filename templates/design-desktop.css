@@ -716,22 +716,51 @@ tr {
 					margin:15px;
 				}
 			.graphic-container {
-				height:360px;
+				height:330px;
 			}
+				.graphic-legend {
+					margin-top:0;
+					list-style:none;
+					padding:6px 0 0 20px;
+					margin-bottom:6px;
+				}
+					.graphic-legend li {
+						display:inline;
+						margin-right:15px;
+					}
+					.graphic-legend-income, .graphic-legend-spending {
+						padding:0 5px;
+					}
+					.graphic-legend-income {
+						background-color:#00aacc;
+					}
+					.graphic-legend-spending {
+						background-color:#ff5555;
+					}
 				.graphic-bar-container {
 					height:100%;
 					width:8.3333%;
 					display:inline-block;
+					opacity:0;
 				}
-					.graphic-bar-full {
-						width:15px;
-						height:100%;
-						background-color:#00aacc;
+					.graphic-bar-center {
 						margin:0 auto;
+						width:30px;
 					}
-					.graphic-bar-content {
-						background-color:#efefef;
-					}
+						.graphic-bar-income, .graphic-bar-spending {
+							width:15px;
+							height:100%;
+							display:inline-block;
+						}
+						.graphic-bar-income {
+							background-color:#00aacc;
+						}
+						.graphic-bar-spending {
+							background-color:#ff5555;
+						}
+						.graphic-bar-empty {
+							background-color:#fff;
+						}
 	.graphic {
 		width:60%;
 	}

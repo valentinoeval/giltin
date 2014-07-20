@@ -21,6 +21,10 @@
 	echo '<section class="tablet panel graphic">
 			<section class="panel-header"><span><i class="fa fa-history"></i>&nbsp;&nbsp;Graphique d\'activité depuis le début de l\'année</span></section>
 			<section class="panel-body">
+				<ul class="graphic-legend">
+					<li><i class="graphic-legend-income">&nbsp;</i>&nbsp;Recettes</li>
+					<li><i class="graphic-legend-spending">&nbsp;</i>&nbsp;Dépenses</li>
+				</ul>
 				<section class="graphic-container">';
 				$mounths=$bddlog->query('SELECT * FROM giltin_comptes_'.$_SESSION['id'].' WHERE id_compte=1 AND op_date LIKE "2014%" ORDER BY op_date ASC');
 				$nb_mounth=1;
@@ -47,15 +51,15 @@
 					}
 				}
 				for ($i=1; $i<=12; $i++) {
-					echo '<section class="graphic-bar-container">';
+					echo '<section class="graphic-bar-container graphic-m'.$i.'">';
 					if (isset($datas[$i])) {
-						//echo 'Mois : '.$i.' Recettes : '.$datas[$i]['income'].'€ Dépenses : '.$datas[$i]['spending'].'€<br />';
-						$total=$datas[$i]['income']+$datas[$i]['spending'];//var_dump($total);
-						$percentIncome=(1-($datas[$i]['income']/$total))*100;//var_dump($percentIncome);
-						$percentSpending=(1-($datas[$i]['spending']/$total))*100;//var_dump($percentSpending);echo '<br /><br />';
-						echo '<section class="graphic-bar-full"><section class="graphic-bar-content" style="height:'.$percentIncome.'%;"></section></section>';
-						echo '<section class="graphic-bar-full"><section class="graphic-bar-content" style="height:'.$percentSpending.'%;"></section></section>';
-						//echo '<section class="graphic-bar-content" style="height:'.$percentSpending.'%;"></section>';
+						$total=$datas[$i]['income']+$datas[$i]['spending'];
+						$percentIncome=(1-($datas[$i]['income']/$total))*100;
+						$percentSpending=(1-($datas[$i]['spending']/$total))*100;
+						echo '<section class="graphic-bar-center">';
+							echo '<section class="graphic-bar-income"><section class="graphic-bar-empty" style="height:'.$percentIncome.'%;"></section></section>';
+							echo '<section class="graphic-bar-spending"><section class="graphic-bar-empty" style="height:'.$percentSpending.'%;"></section></section>';
+						echo '</section>';
 					}
 					echo '</section>';
 				}

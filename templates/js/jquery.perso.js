@@ -86,7 +86,7 @@ $(document).ready(function() {
 		});
 	});
 
-	//systemm rétractation de la barre de gauche
+	//système rétractation de la barre de gauche
 	$('.btn-navbar').toggle(function() {
 		$('#barLeft').css({'width' : '0', 'overflow' : 'hidden'});
 		$('.logo').html('<a href="./"><span class="imgMenu"><img alt="Logo" src="templates/images/logo.png" /></span></a>');
@@ -97,5 +97,30 @@ $(document).ready(function() {
 		$('.logo').html('<a href="./"><span class="imgMenu"><img alt="Logo" src="templates/images/logo.png" /></span>Giltin\'</a>');
 		$('.logo').css({'width' : '250px'});
 		$('#content').css({'margin' : '25px 0 0 250px'});
+	});
+
+	//effet d'apparition du graphique
+	$('.graphic-m1').fadeTo(300, 1, function() {
+		$('.graphic-m2').fadeTo(300, 1, function() {
+			$('.graphic-m3').fadeTo(300, 1, function() {
+				$('.graphic-m4').fadeTo(300, 1, function() {
+					$('.graphic-m5').fadeTo(300, 1, function() {
+						$('.graphic-m6').fadeTo(300, 1, function() {
+							$('.graphic-m7').fadeTo(300, 1, function() {
+								$('.graphic-m8').fadeTo(300, 1, function() {
+									$('.graphic-m9').fadeTo(300, 1, function() {
+										$('.graphic-bar-container .m10').fadeTo(300, 1, function() {
+											$('.graphic-bar-container .m11').fadeTo(300, 1, function() {
+												$('.graphic-bar-container .m12').fadeTo(300, 1);
+											});
+										});
+									});
+								});
+							});
+						});
+					});
+				});
+			});
+		});
 	});
 });
