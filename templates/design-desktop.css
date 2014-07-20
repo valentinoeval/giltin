@@ -726,11 +726,11 @@ tr {
 					.graphic-bar-full {
 						width:15px;
 						height:100%;
-						background-color:#efefef;
+						background-color:#00aacc;
 						margin:0 auto;
 					}
 					.graphic-bar-content {
-						background-color:#00aacc;
+						background-color:#efefef;
 					}
 	.graphic {
 		width:60%;

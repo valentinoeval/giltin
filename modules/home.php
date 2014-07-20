@@ -47,16 +47,17 @@
 					}
 				}
 				for ($i=1; $i<=12; $i++) {
-					echo '<section class="graphic-bar-container"><section class="graphic-bar-full">';
+					echo '<section class="graphic-bar-container">';
 					if (isset($datas[$i])) {
 						//echo 'Mois : '.$i.' Recettes : '.$datas[$i]['income'].'€ Dépenses : '.$datas[$i]['spending'].'€<br />';
-						$total=$datas[$i]['income']+$datas[$i]['spending'];
-						$percentIncome=$datas[$i]['income']/$total*300;
-						$percentSpending=$datas[$i]['spending']/$total*300;
-						echo '<section class="graphic-bar-content" style="height:'.$percentIncome.'px;"></section>';
-						echo '<section class="graphic-bar-content" style="height:'.$percentSpending.'px;"></section>';
+						$total=$datas[$i]['income']+$datas[$i]['spending'];//var_dump($total);
+						$percentIncome=(1-($datas[$i]['income']/$total))*100;//var_dump($percentIncome);
+						$percentSpending=(1-($datas[$i]['spending']/$total))*100;//var_dump($percentSpending);echo '<br /><br />';
+						echo '<section class="graphic-bar-full"><section class="graphic-bar-content" style="height:'.$percentIncome.'%;"></section></section>';
+						echo '<section class="graphic-bar-full"><section class="graphic-bar-content" style="height:'.$percentSpending.'%;"></section></section>';
+						//echo '<section class="graphic-bar-content" style="height:'.$percentSpending.'%;"></section>';
 					}
-					echo '</section></section>';
+					echo '</section>';
 				}
 			echo '</section>
 			</section>
