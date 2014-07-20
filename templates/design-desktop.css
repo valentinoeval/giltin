@@ -716,8 +716,22 @@ tr {
 					margin:15px;
 				}
 			.graphic-container {
-				background-color:#00aacc;
+				height:360px;
 			}
+				.graphic-bar-container {
+					height:100%;
+					width:8.3333%;
+					display:inline-block;
+				}
+					.graphic-bar-full {
+						width:15px;
+						height:100%;
+						background-color:#efefef;
+						margin:0 auto;
+					}
+					.graphic-bar-content {
+						background-color:#00aacc;
+					}
 	.graphic {
 		width:60%;
 	}

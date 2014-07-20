@@ -45,11 +45,18 @@
 					else {
 						$spending+=$op['montant'];
 					}
-				}//die();
+				}
 				for ($i=1; $i<=12; $i++) {
+					echo '<section class="graphic-bar-container"><section class="graphic-bar-full">';
 					if (isset($datas[$i])) {
-						echo 'Mois : '.$i.' Recettes : '.$datas[$i]['income'].'€ Dépenses : '.$datas[$i]['spending'].'€<br />';
+						//echo 'Mois : '.$i.' Recettes : '.$datas[$i]['income'].'€ Dépenses : '.$datas[$i]['spending'].'€<br />';
+						$total=$datas[$i]['income']+$datas[$i]['spending'];
+						$percentIncome=$datas[$i]['income']/$total*300;
+						$percentSpending=$datas[$i]['spending']/$total*300;
+						echo '<section class="graphic-bar-content" style="height:'.$percentIncome.'px;"></section>';
+						echo '<section class="graphic-bar-content" style="height:'.$percentSpending.'px;"></section>';
 					}
+					echo '</section></section>';
 				}
 			echo '</section>
 			</section>
