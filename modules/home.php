@@ -26,41 +26,38 @@
 					<li><i class="graphic-legend-spending">&nbsp;</i>&nbsp;Dépenses</li>
 				</ul>
 				<section class="graphic-container">';
-				$mounths=$bddlog->query('SELECT * FROM giltin_comptes_'.$_SESSION['id'].' WHERE id_compte=1 AND op_date LIKE "2014%" ORDER BY op_date ASC');
-				$nb_mounth=1;
-				$income=0;
-				$spending=0;
-				$datas=array();
-				while ($op=$mounths->fetch(PDO::FETCH_ASSOC)) {
-					list($year, $mounth, $day)=explode('-', $op['op_date']);
-					$mounth=(int)$mounth;
-					if ($nb_mounth<$mounth) {
-						$datas[$nb_mounth]=array(
-							'income'	=> $income,
-							'spending'	=> $spending
-						);
-						$nb_mounth=$mounth;
-						$income=0;
-						$spending=0;
+				for ($i=1; $i<=date('m'); $i++) {
+					$income=0;
+					$spending=0;
+					$datas=array();
+					if ($i<10)
+						$num_mounth='0'.$i;
+					else
+						$num_mounth=$i;
+
+					$mounths=$bddlog->query('SELECT * FROM giltin_comptes_'.$_SESSION['id'].' WHERE id_compte=1 AND op_date LIKE "2014-'.$num_mounth.'%" ORDER BY op_date ASC');
+					while ($op=$mounths->fetch(PDO::FETCH_ASSOC)) {
+						if ($op['type']=='c') {
+							$income+=$op['montant'];
+						}
+						else {
+							$spending+=$op['montant'];
+						}
 					}
-					if ($op['type']=='c') {
-						$income+=$op['montant'];
+					echo '<section class="graphic-bar-container graphic-m'.$i.'">';
+					$total=$income+$spending;
+					if ($total>0) {
+						$percentIncome=(1-($income/$total))*100;
+						$percentSpending=(1-($spending/$total))*100;
 					}
 					else {
-						$spending+=$op['montant'];
+						$percentIncome=100;
+						$percentSpending=100;
 					}
-				}
-				for ($i=1; $i<=12; $i++) {
-					echo '<section class="graphic-bar-container graphic-m'.$i.'">';
-					if (isset($datas[$i])) {
-						$total=$datas[$i]['income']+$datas[$i]['spending'];
-						$percentIncome=(1-($datas[$i]['income']/$total))*100;
-						$percentSpending=(1-($datas[$i]['spending']/$total))*100;
 						echo '<section class="graphic-bar-center">';
 							echo '<section class="graphic-bar-income"><section class="graphic-bar-empty" style="height:'.$percentIncome.'%;"></section></section>';
 							echo '<section class="graphic-bar-spending"><section class="graphic-bar-empty" style="height:'.$percentSpending.'%;"></section></section>';
 						echo '</section>';
-					}
 					echo '</section>';
 				}
 			echo '</section>
