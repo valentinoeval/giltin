@@ -120,7 +120,12 @@
 			</section>
 			<section class="panel-body">
 				<section class="panel-body-content">
-
+					<ul>';
+						$req=$bddlog->query('SELECT * FROM giltin_categories');
+						while ($category=$req->fetch(PDO::FETCH_ASSOC)) {
+							echo '<li>'.$category['nom'].'</li>';
+						}
+				echo '</ul>
 				</section>
 			</section>
 		</section>';

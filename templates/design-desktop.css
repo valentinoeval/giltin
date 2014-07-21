@@ -147,7 +147,7 @@ tr {
 	cursor:pointer;
 }
 .navbar li.logo {width:250px; margin:0 -4px 0 0; background-color:#232b2e;}
-.navbar li.logo a {color:#fff;}
+.navbar li.logo a {color:#fff; display:inline-block;}
 .navbar li.logo:hover {background-color:#161b1d;}
 .navbar li#user {position:absolute; right:0px; min-width:191px;}
 .navbar li:hover {background-color:#75919C;}
@@ -177,7 +177,7 @@ tr {
 .navbar li ul li, .navbar li ul li:first-child {width:145px; margin:0 0 0 -40px; padding:0; height:30px; line-height:30px;}
 .navbar li ul li a {height:30px; line-height:30px; width:100%; display:inline-block; text-align:left; font-size:15px;}
 .navbar li:hover ul li:hover {background-color:#5D9C7F;}
-.navbar button {background:none; border:none; top:9px; position: relative; cursor:pointer;}
+.navbar button {background:none; border:none; top:9px; left:4px; position: relative; cursor:pointer;}
 .navbar i {color:#676767; font-size:1.6em;}
 
 #mois {margin:0; padding:0; list-style:none; width:115px; height:28px; display:block; /*background-image:url('images/spinner.png');*/}
