@@ -111,7 +111,7 @@
 				echo '</section>
 				</section>
 			</section>';
-	}var_dump($accounts);
+	}
 
 	//répartition des dépenses du mois courant
 	echo '<section class="tablet panel">
