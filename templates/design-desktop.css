@@ -151,7 +151,7 @@ tr {
 .navbar li.logo:hover {background-color:#161b1d;}
 .navbar li#user {position:absolute; right:0px; min-width:191px;}
 .navbar li:hover {background-color:#75919C;}
-.navbar li.extend {top:-7px; position: relative;}
+.navbar li.extend {top:-8px; position: relative;}
 .navbar li a {height:46px; width:100%; line-height:46px; color:#676767; text-decoration:none; text-align:left; padding:0 13px 0 13px;}
 .navbar li a:hover {color:#fff;}
 .navbar li#active {background-color:#70bc99;}
