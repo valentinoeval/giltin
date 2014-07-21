@@ -454,7 +454,7 @@
 	}
 
 	function dateInt2String($int) {
-		$mounthInt=array('01', '02', '03', '04', '05', '06', '06', '07', '08', '09', '10', '11', '12');
+		$mounthInt=array('01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12');
 		$mounthStr=array('Janvier', 'F&eacute;vrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'D&eacute;cembre');
 		
 		return str_replace($mounthInt, $mounthStr, $int);

@@ -18,8 +18,9 @@
 		die("Impossible d'accéder à la base de données");
 	}
 
+	//graphique affichant le pourcentage des recettes par rapport aux dépenses
 	echo '<section class="tablet panel graphic">
-			<section class="panel-header"><span><i class="fa fa-history"></i>&nbsp;&nbsp;Graphique d\'activité depuis le début de l\'année</span></section>
+			<section class="panel-header"><span><i class="fa fa-history"></i>Graphique d\'activité depuis le début de l\'année</span></section>
 			<section class="panel-body">
 				<ul class="graphic-legend">
 					<li><i class="graphic-legend-income">&nbsp;</i>&nbsp;Recettes</li>
@@ -44,7 +45,7 @@
 							$spending+=$op['montant'];
 						}
 					}
-					echo '<section class="graphic-bar-container graphic-m'.$i.'">';
+					echo '<section class="graphic-bar-container graphic-m'.$i.'"  title="'.dateInt2String($num_mounth).'">';
 					$total=$income+$spending;
 					if ($total>0) {
 						$percentIncome=(1-($income/$total))*100;
@@ -64,10 +65,15 @@
 			</section>
 		</section>';
 
+	//5 dernières oérations de tous les comptes
 	$req=$bddlog->query('SELECT * FROM giltin_list_comptes WHERE id_user='.$_SESSION['id']);
 	while ($accounts=$req->fetch(PDO::FETCH_ASSOC)) {
 		echo '<section class="tablet panel">
-				<section class="panel-header"><a href="?m=view_op&account='.$accounts['id_compte'].'"" title="Visionnez votre compte \''.$accounts['nom'].'\'"><span><i class="fa fa-money"></i>&nbsp;&nbsp;'.$accounts['nom'].'</span></a></section>
+				<section class="panel-header">
+					<a href="?m=view_op&account='.$accounts['id_compte'].'"" title="Visionnez votre compte \''.$accounts['nom'].'\'">
+						<span><i class="fa fa-money"></i>'.$accounts['nom'].' - 5 dernières opérations</span>
+					</a>
+					</section>
 				<section class="panel-body">
 					<table cellspacing="0" cellpadding="0" class="tList">
 						<tbody>';
@@ -85,4 +91,36 @@
 				</section>
 			</section>';
 	}
+
+	//nombre d'opération du mois courant
 	
+	$req=$bddlog->query('SELECT * FROM giltin_list_comptes WHERE id_user='.$_SESSION['id']);
+	while ($accounts=$req->fetch(PDO::FETCH_ASSOC)) {
+		echo '<section class="tablet panel">
+				<section class="panel-header">
+					<span><i class="fa fa-money"></i>'.$accounts['nom'].' - Nombre d\'opérations</span>
+					</section>
+				<section class="panel-body">
+					<section class="panel-body-content nb-op">';
+						$reqAccount=$bddlog->query('SELECT count(*) AS nb_op FROM giltin_comptes_'.$_SESSION['id'].' WHERE id_compte='.$accounts['id_compte'].' AND op_date LIKE "'.date('Y-m').'%"');
+						$datas=$reqAccount->fetch(PDO::FETCH_ASSOC);
+						echo '<h3>'.$datas['nb_op'].' opération';
+						if ($datas['nb_op']>0)
+							echo 's';
+						echo '</h3>';
+				echo '</section>
+				</section>
+			</section>';
+	}var_dump($accounts);
+
+	//répartition des dépenses du mois courant
+	echo '<section class="tablet panel">
+			<section class="panel-header">
+				<span><i class="fa fa-history"></i>Organisation des opérations courantes
+			</section>
+			<section class="panel-body">
+				<section class="panel-body-content">
+
+				</section>
+			</section>
+		</section>';
