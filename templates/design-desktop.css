@@ -9,9 +9,10 @@ body {
 /* CAS GENERAUX */
 table {background-color:#fff;}
 th, td {padding:2px 10px 2px 15px;}
+form {margin:0;}
 select {width:160px; height:26px; font-size:14px; padding:5px 10px 5px 10px;}
 input, select {
-	width:300px;
+	width:100%;
 	height:40px;
 	padding:10px;
 	margin-bottom:15px;
@@ -141,8 +142,31 @@ tr {
 	.list li {
 		height:30px;
 	}
-		.list i {padding:0 6px; margin-right:10px;}
-
+		.list i {padding:0 6px; margin-right:10px; border-radius: 3px;}
+.btn {
+	width:auto;
+	height:40px;
+	padding:10px;
+	border:none;
+	border-radius:4px;
+	font-size:16px;
+	-webkit-transition:all .15s ease-in;
+	-moz-transition:all .15s ease-in;
+	-o-transition:all .15s ease-in;
+	transition:all .15s ease-in;
+	cursor:pointer;
+}
+.btn-submit {
+	background-color:#3E4547;
+	border-bottom:2px solid #232b2e;
+	color:#fff;
+	float:right;
+}
+.btn-submit:hover {
+	background-color:#e5e5e5;
+	border-bottom:2px solid #d2d2d2;
+	color:#161b1d;
+}
 /******* CAS SPECIFIQUES *******/
 .navbar {width:100%; height:46px; background-color:#fff; top:0; position:fixed; z-index:1000;}
 .navbar ul:first-child {margin-top:0px; padding-left:0;}
@@ -162,7 +186,7 @@ tr {
 .navbar li.logo:hover {background-color:#161b1d;}
 .navbar li#user {position:absolute; right:0px; min-width:191px;}
 .navbar li:hover {background-color:#75919C;}
-.navbar li.extend {top:-8px; position: relative;}
+.navbar li.extend {top:-7px; position: relative;}
 .navbar li a {height:46px; width:100%; line-height:46px; color:#676767; text-decoration:none; text-align:left; padding:0 13px 0 13px;}
 .navbar li a:hover {color:#fff;}
 .navbar li#active {background-color:#70bc99;}
@@ -477,8 +501,9 @@ tr {
 		width:67px;
 		height:26px;
 		background:#34495e;
-		margin:-48px 0 21px 225px;
+		margin:-48px 10px 0 0;
 		border-top:1px solid #b4b4b4;
+		float:right;
 		
 		-webkit-border-radius:12px;
 		-moz-border-radius:12px;
@@ -736,6 +761,12 @@ tr {
 			.panel-body p {
 				margin:15px;
 			}
+		.panel-footer {
+			background-color:#f5f5f5;
+		}
+			.panel-footer-content {
+				padding:15px;
+			}
 			.graphic-container {
 				height:270px;
 				padding:30px 0;
@@ -752,6 +783,7 @@ tr {
 					}
 					.graphic-legend-income, .graphic-legend-spending {
 						padding:0 6px;
+						border-radius:3px;
 					}
 					.graphic-legend-income {
 						background-color:#00aacc;
@@ -773,22 +805,23 @@ tr {
 							width:15px;
 							height:100%;
 							display:inline-block;
+							-webkit-transition:all .1s ease;
+							-moz-transition:all .1s ease;
+							-o-transition:all .1s ease;
+							-ms-transition:all .1s ease;
+							transition:all .1s ease;
+							cursor:pointer;
 						}
-						.graphic-bar-income {
-							background-color:#00aacc;
-						}
-						.graphic-bar-spending {
-							background-color:#ff5555;
-						}
-						.graphic-bar-empty {
-							background-color:#fff;
-						}
+						.graphic-bar-income {background-color:#00aacc;}
+						.graphic-bar-income:hover {opacity:0.6;}
+						.graphic-bar-spending {background-color:#ff5555;}
+						.graphic-bar-spending:hover {opacity:0.6;}
+						.graphic-bar-empty {background-color:#fff;}
 	.graphic {
 		width:60%;
 		padding:0 8px 0 7px;
 	}
 		.graphic .panel-header {
-			width:auto;
 			margin-left:-7px;
 			padding-right:15px;
 		}
@@ -804,7 +837,15 @@ tr {
 			.diagram-section {
 				height:30px;
 				display:inline-block;
+				-webkit-transition:all .1s ease;
+				-moz-transition:all .1s ease;
+				-o-transition:all .1s ease;
+				-ms-transition:all .1s ease;
+				transition:all .1s ease;
+				cursor:pointer;
 			}
+			.diagram-section:hover {opacity:0.6;}
+
 			.cat1 {background-color:#00aacc;}
 			.cat2 {background-color:#ff5555;}
 			.cat3 {background-color:#3E4547;}
@@ -814,9 +855,9 @@ tr {
 			.cat7 {background-color:#9b59b6;}
 			.cat8 {background-color:#f39c12;}
 			.cat9 {background-color:#27ae60;}
-			.cat10 {background-color:#fff;}
-			.cat11 {background-color:#fff;}
-			.cat12 {background-color:#fff;}
+			.cat10 {background-color:#f85d2c;}
+			.cat11 {background-color:#586483;}
+			.cat12 {background-color:#ffa59c;}
 
 	/* galerie des avatars */
 	.avatar_list {

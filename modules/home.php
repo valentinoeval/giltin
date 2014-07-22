@@ -73,7 +73,7 @@
 					<a href="?m=view_op&account='.$accounts['id_compte'].'"" title="Visionnez votre compte \''.$accounts['nom'].'\'">
 						<span><i class="fa fa-money"></i>'.$accounts['nom'].' - 5 dernières opérations</span>
 					</a>
-					</section>
+				</section>
 				<section class="panel-body">
 					<table cellspacing="0" cellpadding="0" class="tList">
 						<tbody>';
@@ -99,7 +99,7 @@
 		echo '<section class="tablet panel">
 				<section class="panel-header">
 					<span><i class="fa fa-money"></i>'.$accounts['nom'].' - Nombre d\'opérations</span>
-					</section>
+				</section>
 				<section class="panel-body">
 					<section class="panel-body-content nb-op">';
 						$reqAccount=$bddlog->query('SELECT count(*) AS nb_op FROM giltin_comptes_'.$_SESSION['id'].' WHERE id_compte='.$accounts['id_compte'].' AND op_date LIKE "'.date('Y-m').'%"');
@@ -116,7 +116,7 @@
 	//répartition des dépenses du mois courant
 	echo '<section class="tablet panel">
 			<section class="panel-header">
-				<span><i class="fa fa-history"></i>Organisation des opérations courantes
+				<span><i class="fa fa-history"></i>Organisation des opérations courantes</span>
 			</section>
 			<section class="panel-body">
 				<section class="panel-body-content">';

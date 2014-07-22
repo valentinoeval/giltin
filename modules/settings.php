@@ -33,7 +33,7 @@
 						$nb_compte=$datas['nb_compte']+1;
 						$nom=strip_codes($_POST['nom']);
 						//insertion du nouveau compte
-						$bddlog->exec('INSERT INTO giltin_list_comptes VALUES('.$_SESSION['id'].', '.$nb_compte.', "'.$nom.'")');
+						$bddlog->exec('INSERT INTO giltin_list_comptes VALUES('.$_SESSION['id'].', '.$nb_compte.', "'.$nom.'", '.$_POST['categorie'].')');
 						header('location:?m=settings&msg=account_create');
 					}
 					else
@@ -48,6 +48,13 @@
 <h3>Ajouter un compte</h3>
 <form action="?m=settings&section=new_account" method="post">
 	<input type="text" name="nom" placeholder="Nom du compte" /><br />
+	<select name="categorie">
+		<?php
+			$req4=$bddlog->query('SELECT * FROM giltin_comptes_categories');
+			while ($datas4=$req4->fetch(PDO::FETCH_ASSOC))
+				echo '<option value="'.$datas4['id_categorie'].'">'.$datas4['nom'].'</option>';
+		?>
+	</select><br />
 	<input type="submit" value="Ajouter" />
 </form>
 <table cellspacing="0" cellpadding="0" id="tList">

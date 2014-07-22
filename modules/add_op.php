@@ -95,48 +95,61 @@
 	$req4=$bddlog->query('SELECT * FROM giltin_list_comptes WHERE id_user='.$_SESSION['id'].' GROUP BY id_compte ASC');
 	$req5=$bddlog->query('SELECT * FROM giltin_categories');
 ?>
-<h3>Ajouter une op&eacute;ration bancaire</h3>
-<form action="?m=add_op" method="post">
-	<input type="text" name="label" placeholder="Nom de l'op&eacute;ration bancaire" class="saisie" /><br />
-	<div class="squared">
-		Virement :&nbsp;&nbsp;
-		<input type="checkbox" id="squared" name="virement" value="1" />
-		<label for="squared"></label>
-	</div><br />
-	<div id="virement">
-		<select name="virement_account_1" class="select_virement">
-			<option value="0">-D&eacute;biteur-</option>
-		<?php
-			while ($datas2=$req2->fetch(PDO::FETCH_ASSOC))
-				echo '<option value="'.$datas2['id_compte'].'">'.$datas2['nom'].'</option>';
-		?>
-		</select> ->
-		<select name="virement_account_2" class="select_virement">
-			<option value="0">-Cr&eacute;diteur-</option>
-			<?php
-				while ($datas3=$req3->fetch(PDO::FETCH_ASSOC))
-					echo '<option value="'.$datas3['id_compte'].'">'.$datas3['nom'].'</option>';
-			?>
-		</select>
-	</div>
-	<select name="account" id="account">
-		<?php
-			while ($datas4=$req4->fetch(PDO::FETCH_ASSOC))
-				echo '<option value="'.$datas4['id_compte'].'">'.$datas4['nom'].'</option>';
-		?>
-	</select><br />
-	<select name="categorie">
-		<?php
-			while ($datas5=$req5->fetch(PDO::FETCH_ASSOC))
-				echo '<option value="'.$datas5['id_category'].'">'.$datas5['nom'].'</option>';
-		?>
-	</select><br />
-	<input type="date" name="date" value="<?php echo date('Y-m-d'); ?>" /><br />
-	<input type="text" name="montant" placeholder="Montant" class="montant" /><br />
-	<div class="slideBox">	
-		<input type="checkbox" value="unChecked" id="slideBox" name="slide" />
-		<label for="slideBox"></label>
-	</div>
-	<input type="hidden" name="active" />
-	<input type="submit" value="Ajouter" class="ajouter" />
-</form>
+<section class="tablet panel">
+	<section class="panel-header">
+		<span><i class="fa fa-plus"></i>Ajouter une op&eacute;ration bancaire</span>
+	</section>
+	<section class="panel-body">
+		<section class="panel-body-content">
+			<form action="?m=add_op" method="post" id="add_op">
+				<input type="text" name="label" placeholder="Nom de l'op&eacute;ration bancaire" class="saisie" /><br />
+				<div class="squared">
+					Virement :&nbsp;&nbsp;
+					<input type="checkbox" id="squared" name="virement" value="1" />
+					<label for="squared"></label>
+				</div><br />
+				<div id="virement">
+					<select name="virement_account_1" class="select_virement">
+						<option value="0">-D&eacute;biteur-</option>
+					<?php
+						while ($datas2=$req2->fetch(PDO::FETCH_ASSOC))
+							echo '<option value="'.$datas2['id_compte'].'">'.$datas2['nom'].'</option>';
+					?>
+					</select> ->
+					<select name="virement_account_2" class="select_virement">
+						<option value="0">-Cr&eacute;diteur-</option>
+						<?php
+							while ($datas3=$req3->fetch(PDO::FETCH_ASSOC))
+								echo '<option value="'.$datas3['id_compte'].'">'.$datas3['nom'].'</option>';
+						?>
+					</select>
+				</div>
+				<select name="account" id="account">
+					<?php
+						while ($datas4=$req4->fetch(PDO::FETCH_ASSOC))
+							echo '<option value="'.$datas4['id_compte'].'">'.$datas4['nom'].'</option>';
+					?>
+				</select><br />
+				<select name="categorie">
+					<?php
+						while ($datas5=$req5->fetch(PDO::FETCH_ASSOC))
+							echo '<option value="'.$datas5['id_category'].'">'.$datas5['nom'].'</option>';
+					?>
+				</select><br />
+				<input type="date" name="date" value="<?php echo date('Y-m-d'); ?>" /><br />
+				<input type="text" name="montant" placeholder="Montant" class="montant" />
+				<div class="slideBox">	
+					<input type="checkbox" value="unChecked" id="slideBox" name="slide" />
+					<label for="slideBox"></label>
+				</div>
+				<input type="hidden" name="active" />
+			</form>
+		</section>
+	</section>
+	<section class="panel-footer">
+		<section class="panel-footer-content">
+			<button class="btn btn-submit" onclick="document.forms['add_op'].submit()">Ajouter</button>
+			<section class="clear"></section>
+		</section>
+	</section>
+</section>
