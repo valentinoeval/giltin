@@ -141,6 +141,20 @@ tr {
 	.list li {
 		height:30px;
 	}
+		.list .cat1 {background-color:#fff;}
+		.list .cat2 {background-color:#ff0000;}
+		.list .cat3 {background-color:#ff00ff;}
+		.list .cat4 {background-color:#00ff00;}
+		.list .cat5 {background-color:#0000ff;}
+		.list .cat6 {background-color:#0f0f0f;}
+		.list .cat7 {background-color:#f0f0f0;}
+		.list .cat8 {background-color:#54c324;}
+		.list .cat9 {background-color:#65cf3d;}
+		.list .cat10 {background-color:#fff;}
+		.list .cat11 {background-color:#fff;}
+		.list .cat12 {background-color:#fff;}
+		
+		.list i {padding:0 6px;}
 
 /******* CAS SPECIFIQUES *******/
 .navbar {width:100%; height:46px; background-color:#fff; top:0; position:fixed; z-index:1000;}

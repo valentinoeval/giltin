@@ -122,6 +122,7 @@
 				<section class="panel-body-content">
 					<ul class="list">';
 						$categories=array();
+						$nb_op_total=0;
 						$reqCat=$bddlog->query('SELECT * FROM giltin_categories');
 						while ($categorys=$reqCat->fetch(PDO::FETCH_ASSOC)) {
 							$categories[$categorys['id_category']]=array(
@@ -133,9 +134,18 @@
 						$req=$bddlog->query('SELECT * FROM giltin_comptes_'.$_SESSION['id'].' WHERE op_date LIKE "'.date('Y-m').'%" AND id_compte=1');
 						while ($op=$req->fetch(PDO::FETCH_ASSOC)) {
 							$categories[$op['categorie']]['nb_op']++;
+							$nb_op_total++;
 						}
+						//diagramme
+						echo '<section class="diagram">';
 						foreach ($categories as $categorie) {
-							echo '<li class"'.$categorie['id'].'">'.$categorie['nom'].' '.$categorie['nb_op'].'</li>';
+							$percent=$categorie['nb_op']/$nb_op_total*100;
+							echo '<section class="diagram-section cat'.$categorie['id'].'" style="width='.$percent.'%;"><section>';
+						}
+						echo '</section>';
+						//légende
+						foreach ($categories as $categorie) {
+							echo '<li><i class="cat'.$categorie['id'].'">&nbsp;</i>'.$categorie['nom'].' '.$categorie['nb_op'].'</li>';
 						}
 				echo '</ul>
 				</section>
