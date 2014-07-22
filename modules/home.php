@@ -119,35 +119,35 @@
 				<span><i class="fa fa-history"></i>Organisation des opérations courantes
 			</section>
 			<section class="panel-body">
-				<section class="panel-body-content">
-					<ul class="list">';
-						$categories=array();
-						$nb_op_total=0;
-						$reqCat=$bddlog->query('SELECT * FROM giltin_categories');
-						while ($categorys=$reqCat->fetch(PDO::FETCH_ASSOC)) {
-							$categories[$categorys['id_category']]=array(
-								'id'	=> $categorys['id_category'],
-								'nom'	=> $categorys['nom'],
-								'nb_op'	=> 0
-							);
-						}
-						$req=$bddlog->query('SELECT * FROM giltin_comptes_'.$_SESSION['id'].' WHERE op_date LIKE "'.date('Y-m').'%" AND id_compte=1');
-						while ($op=$req->fetch(PDO::FETCH_ASSOC)) {
-							$categories[$op['categorie']]['nb_op']++;
-							$nb_op_total++;
-						}
-						//diagramme
-						echo '<section class="diagram">';
-						foreach ($categories as $categorie) {
-							$percent=$categorie['nb_op']/$nb_op_total*100;
-							echo '<section class="diagram-section cat'.$categorie['id'].'" style="width='.$percent.'%;"><section>';
-						}
-						echo '</section>';
-						//légende
-						foreach ($categories as $categorie) {
-							echo '<li><i class="cat'.$categorie['id'].'">&nbsp;</i>'.$categorie['nom'].' '.$categorie['nb_op'].'</li>';
-						}
-				echo '</ul>
+				<section class="panel-body-content">';
+					$categories=array();
+					$nb_op_total=0;
+					$reqCat=$bddlog->query('SELECT * FROM giltin_categories');
+					while ($categorys=$reqCat->fetch(PDO::FETCH_ASSOC)) {
+						$categories[$categorys['id_category']]=array(
+							'id'	=> $categorys['id_category'],
+							'nom'	=> $categorys['nom'],
+							'nb_op'	=> 0
+						);
+					}
+					$req=$bddlog->query('SELECT * FROM giltin_comptes_'.$_SESSION['id'].' WHERE op_date LIKE "'.date('Y-m').'%" AND id_compte=1');
+					while ($op=$req->fetch(PDO::FETCH_ASSOC)) {
+						$categories[$op['categorie']]['nb_op']++;
+						$nb_op_total++;
+					}
+					//diagramme
+					echo '<section class="diagram">';
+					foreach ($categories as $categorie) {
+						$percent=$categorie['nb_op']/$nb_op_total*100;
+						echo '<section class="diagram-section cat'.$categorie['id'].'" style="width:'.$percent.'%;"></section>';
+					}
+					echo '</section>';
+					//légende
+					echo '<ul class="list">';
+					foreach ($categories as $categorie) {
+						echo '<li><i class="cat'.$categorie['id'].'">&nbsp;</i>'.$categorie['nom'].'</li>';
+					}
+					echo '</ul>
 				</section>
 			</section>
 		</section>';
