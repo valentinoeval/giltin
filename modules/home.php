@@ -120,10 +120,22 @@
 			</section>
 			<section class="panel-body">
 				<section class="panel-body-content">
-					<ul>';
-						$req=$bddlog->query('SELECT * FROM giltin_categories');
-						while ($category=$req->fetch(PDO::FETCH_ASSOC)) {
-							echo '<li>'.$category['nom'].'</li>';
+					<ul class="list">';
+						$categories=array();
+						$reqCat=$bddlog->query('SELECT * FROM giltin_categories');
+						while ($categorys=$reqCat->fetch(PDO::FETCH_ASSOC)) {
+							$categories[$categorys['id_category']]=array(
+								'id'	=> $categorys['id_category'],
+								'nom'	=> $categorys['nom'],
+								'nb_op'	=> 0
+							);
+						}
+						$req=$bddlog->query('SELECT * FROM giltin_comptes_'.$_SESSION['id'].' WHERE op_date LIKE "'.date('Y-m').'%" AND id_compte=1');
+						while ($op=$req->fetch(PDO::FETCH_ASSOC)) {
+							$categories[$op['categorie']]['nb_op']++;
+						}
+						foreach ($categories as $categorie) {
+							echo '<li class"'.$categorie['id'].'">'.$categorie['nom'].' '.$categorie['nb_op'].'</li>';
 						}
 				echo '</ul>
 				</section>

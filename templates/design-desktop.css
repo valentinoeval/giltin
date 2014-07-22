@@ -132,6 +132,16 @@ tr {
 	margin-right:10px;
 }
 
+.list {
+	width:100%;
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+	.list li {
+		height:30px;
+	}
+
 /******* CAS SPECIFIQUES *******/
 .navbar {width:100%; height:46px; background-color:#fff; top:0; position:fixed; z-index:1000;}
 .navbar ul:first-child {margin-top:0px; padding-left:0;}
@@ -740,7 +750,7 @@ tr {
 						margin-right:15px;
 					}
 					.graphic-legend-income, .graphic-legend-spending {
-						padding:0 5px;
+						padding:0 6px;
 					}
 					.graphic-legend-income {
 						background-color:#00aacc;
