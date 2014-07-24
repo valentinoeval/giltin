@@ -68,44 +68,51 @@
 				else
 					$checked='';
 				//bloquage du champ nom s'il s'agit du calcul automatique du solde précédent
-				/*if ($datas['nom']=='Solde pr&eacute;c&eacute;dent' or $datas['nom']=='Solde pr&eacute;c&eacute;dent (Corrig&eacute;)')
+				if ($datas['nom']=='Solde pr&eacute;c&eacute;dent' or $datas['nom']=='Solde pr&eacute;c&eacute;dent (Corrig&eacute;)')
 					$disabled='disabled';
 				else
-					$disabled='';*/
-				echo '
-					<h3>Modification de l\'op&eacute;ration bancaire</h3>
-					<form action="?m=edit&type=op&action=update" method="post">
-						<input type="text" '.$disabled.' name="nom" placeholder="Nom de l\'op&eacute;ration bancaire" value="'.$datas['nom'].'" /><br />
-						<select name="account">';
-							$i=1;
-							while ($datas2=$req2->fetch(PDO::FETCH_ASSOC)) {
-								echo '<option value="'.$datas2['id_compte'].'"';
-								if ($i==$datas['id_compte'])
-									echo ' selected';
-								echo '>'.$datas2['nom'].'</option>';
-								$i++;
-							}
-						echo '</select><br />
-						<select name="categorie">';
-							$i=1;
-							while ($datas3=$req3->fetch(PDO::FETCH_ASSOC)) {
-								echo '<option value="'.$datas3['id_category'].'"';
-								if ($i==$datas['categorie'])
-									echo ' selected';
-								echo '>'.$datas3['nom'].'</option>';
-								$i++;
-							}
-						echo '</select><br />
-						<input type="date" '.$disabled.' name="op_date" placeholder="Nom de l\'op&eacute;ration bancaire" value="'.$datas['op_date'].'" /><br />
-						<input type="text" name="montant" placeholder="Montant" class="montant" value="'.$datas['montant'].'" /><br />
-						<div class="slideBox">	
-							<input type="checkbox" value="unChecked" '.$checked.' id="slideBox" name="slide" />
-							<label for="slideBox"></label>
-						</div>
-						<input type="hidden" name="id_compte" value="'.$account.'" />
-						<input type="hidden" name="id" value="'.$id.'" />
-						<input type="submit" value="Modifier" />
-					</form>';
+					$disabled='';
+				echo '<section class="panel col-30">
+						<section class="panel-header">
+							<span><i class="fa fa-plus"></i>Modification de l\'op&eacute;ration bancaire</span>
+						</section>
+						<section class="panel-body">
+							<section class="panel-body-content">
+								<form action="?m=edit&type=op&action=update" method="post">
+									<input type="text" '.$disabled.' name="nom" placeholder="Nom de l\'op&eacute;ration bancaire" value="'.$datas['nom'].'" /><br />
+									<select name="account">';
+										$i=1;
+										while ($datas2=$req2->fetch(PDO::FETCH_ASSOC)) {
+											echo '<option value="'.$datas2['id_compte'].'"';
+											if ($i==$datas['id_compte'])
+												echo ' selected';
+											echo '>'.$datas2['nom'].'</option>';
+											$i++;
+										}
+									echo '</select><br />
+									<select name="categorie">';
+										$i=1;
+										while ($datas3=$req3->fetch(PDO::FETCH_ASSOC)) {
+											echo '<option value="'.$datas3['id_category'].'"';
+											if ($i==$datas['categorie'])
+												echo ' selected';
+											echo '>'.$datas3['nom'].'</option>';
+											$i++;
+										}
+									echo '</select><br />
+									<input type="date" '.$disabled.' name="op_date" placeholder="Nom de l\'op&eacute;ration bancaire" value="'.$datas['op_date'].'" /><br />
+									<input type="text" name="montant" placeholder="Montant" class="montant" value="'.$datas['montant'].'" /><br />
+									<div class="slideBox">	
+										<input type="checkbox" value="unChecked" '.$checked.' id="slideBox" name="slide" />
+										<label for="slideBox"></label>
+									</div>
+									<input type="hidden" name="id_compte" value="'.$account.'" />
+									<input type="hidden" name="id" value="'.$id.'" />
+									<input type="submit" value="Modifier" />
+								</form>
+							</section>
+						</section>
+					</section>';
 			}
 			break;
 		case 'account':

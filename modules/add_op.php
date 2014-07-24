@@ -95,7 +95,7 @@
 	$req4=$bddlog->query('SELECT * FROM giltin_list_comptes WHERE id_user='.$_SESSION['id'].' GROUP BY id_compte ASC');
 	$req5=$bddlog->query('SELECT * FROM giltin_categories');
 ?>
-<section class="tablet panel">
+<section class="panel">
 	<section class="panel-header">
 		<span><i class="fa fa-plus"></i>Ajouter une op&eacute;ration bancaire</span>
 	</section>

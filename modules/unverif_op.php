@@ -54,27 +54,34 @@
 	$account_name=$datas4['nom'];
 	
 	//affichage des options et informations
-	echo '<div class="conteneur_options">
-			Il y a <span class="info">'.$nb_op.'</span> op&eacute;ration';
-			if ($nb_op>1) echo 's';
-			echo ' bancaire';
-			if ($nb_op>1) echo 's'; echo ' non v&eacute;rifi&eacute;e';
-			if ($nb_op>1) echo 's';
-			echo ' pour votre <span class="info">'.$account_name.'</span>';
-	echo '</div>';
+	echo '<section class="panel col-100">
+			<section class="panel-header">
+				<span><i class="fa fa-money"></i>Opérations à vérifier</span>
+			</section>
+			<section class="panel-body">
+				<section class="panel-body-header">
+					<div class="conteneur_options">
+						Il y a <span class="info">'.$nb_op.'</span> op&eacute;ration';
+						if ($nb_op>1) echo 's';
+						echo ' bancaire';
+						if ($nb_op>1) echo 's'; echo ' non v&eacute;rifi&eacute;e';
+						if ($nb_op>1) echo 's';
+						echo ' pour votre <span class="info">'.$account_name.'</span>
+					</div>
+				</section>';
 
-	//affichage des opérations bancaires récupérées de la BDD
-	echo '<table cellspacing="0" cellpadding="0" id="tList">
-			<tr id="tHeader">
-				<td></td>
-				<td class="nom">Nom de l\'op&eacute;ration bancaire</td>
-				<td class="date">Date</td>
-				<td class="type">Type</td>
-				<td class="montant">Montant</td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>';
+			//affichage des opérations bancaires récupérées de la BDD
+			echo '<table cellspacing="0" cellpadding="0" class="tList">
+					<tr class="tHeader">
+						<td></td>
+						<td class="nom">Nom de l\'op&eacute;ration bancaire</td>
+						<td class="date">Date</td>
+						<td class="type">Type</td>
+						<td class="montant">Montant</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>';
 	$x=0;
 	$url=str_replace('&', '-', $_SERVER['REQUEST_URI']);
 	while ($datas=$req->fetch(PDO::FETCH_ASSOC)) {
@@ -117,4 +124,5 @@
 				echo '<td><div class="del"><a href="?m=del_op&account='.$_GET['account'].'&id='.$datas['id'].'&url='.$url.'" /><img src="templates/images/empty.png" title="Supprimer" /></a></div></td>';
 			echo '</tr>';
 	}
-	echo '</table>';
+	echo '</table>
+		</section>';

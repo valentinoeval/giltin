@@ -103,17 +103,46 @@
 		}
 	}
 ?>
-<h3>Ajouter un utilisateur</h3>
-<form action="?m=admin&section=new_user" method="post">
-	<input type="text" name="login" placeholder="Nom d'utilisateur" /><br />
-	<input type="text" name="nom" placeholder="Pr&eacute;nom et nom de l'utilisateur" /><br />
-	<input type="email" name="email" placeholder="Adresse email" /><br />
-	<input type="submit" value="Ajouter" class="ajouter" />
-</form>
-<button class="button_link"><a href="?m=admin&section=dump_user">Sauvegarder les utilisateurs</a></button>
-<h3>Mettre &agrave; jour le num&eacute;ro de version</h3>
-Version actuelle : <?php echo $version.'.'.$date.'.'.$num_release; ?><br /><br />
-<form action="?m=admin&section=maj_version" method="post">
-	<input type="text" name="version" value="<?php echo $new_version; ?>" /><br />
-	<input type="submit" value="Mettre à jour" />
-</form>
+<section class="row">
+	<section class="panel col-30">
+		<section class="panel-header">
+			<span><i class="fa fa-plus"></i>Ajouter un utilisateur</span>
+		</section>
+		<section class="panel-body">
+			<section class="panel-body-content">
+				<form action="?m=admin&section=new_user" method="post">
+					<input type="text" name="login" placeholder="Nom d'utilisateur" /><br />
+					<input type="text" name="nom" placeholder="Pr&eacute;nom et nom de l'utilisateur" /><br />
+					<input type="email" name="email" placeholder="Adresse email" /><br />
+					<input type="submit" value="Ajouter" class="ajouter" />
+				</form>
+			</section>
+		</section>
+	</section>
+
+	<section class="panel col-20">
+		<section class="panel-header">
+			<span><i class="fa fa-plus"></i>Options</span>
+		</section>
+		<section class="panel-body">
+			<section class="panel-body-content">
+				<button class="button_link"><a href="?m=admin&section=dump_user">Sauvegarder les utilisateurs</a></button>
+			</section>
+		</section>
+	</section>
+</section>
+
+<section class="panel col-30">
+	<section class="panel-header">
+		<span><i class="fa fa-plus"></i>Mettre &agrave; jour le num&eacute;ro de version</span>
+	</section>
+	<section class="panel-body">
+		<section class="panel-body-content">
+			Version actuelle : <?php echo $version.'.'.$date.'.'.$num_release; ?><br /><br />
+			<form action="?m=admin&section=maj_version" method="post">
+				<input type="text" name="version" value="<?php echo $new_version; ?>" /><br />
+				<input type="submit" value="Mettre à jour" />
+			</form>
+		</section>
+	</section>
+</section>

@@ -73,17 +73,24 @@
 			try {
 				$bddlog=new PDO($bdd, $bdduser, $bddmdp);
 
-				echo '<div class="conteneur_options">
-						<button class="button_link"><a href="?m=export&dump=backup">Faire un backup de vos comptes</a></button>
-					</div>
-				 	   <table cellspacing="0" cellpadding="0" id="tList">
-						<tr id="tHeader">
-							<td>Nom du backup</td>
-							<td>Date de cr&eacute;ation</td>
-							<td>Taille</td>
-							<td></td>
-							<td></td>
-						</tr>';
+				echo '<section class="panel col-60">
+						<section class="panel-header">
+							<span><i class="fa fa-plus"></i>Liste de vos sauvegarde</span>
+						</section>
+						<section class="panel-body">
+							<section class="panel-body-header">
+								<div class="conteneur_options">
+									<button class="button_link"><a href="?m=export&dump=backup">Faire un backup de vos comptes</a></button>
+								</div>
+							</section>
+					 		<table cellspacing="0" cellpadding="0" class="tList">
+								<tr class="tHeader">
+									<td>Nom du backup</td>
+									<td>Date de cr&eacute;ation</td>
+									<td>Taille</td>
+									<td></td>
+									<td></td>
+								</tr>';
 				$req5=$bddlog->query('SELECT * FROM giltin_backups WHERE id_user="'.$_SESSION['id'].'" ORDER BY id ASC');
 				$x=0;
 				$url=str_replace('&', '-', $_SERVER['REQUEST_URI']);
@@ -101,7 +108,8 @@
 							</td>
 						</tr>';
 				}
-				echo '</table>
+					echo '</table>
+					</section>
 					<section id="wrapper_overLayer">
 						<section id="overLayer">
 							<section id="contentOverLayer">

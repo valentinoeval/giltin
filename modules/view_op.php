@@ -82,32 +82,36 @@
 	$datas5=$req5->fetch(PDO::FETCH_ASSOC);
 	$account_name=$datas5['nom'];
 	//affichage des options et informations
-	echo '<section class="tablet tablet_user">
-			<table><tbody><tr><td>
-			<button class="button_mounth">
-				<ul id="mois">
-					<li><span id="current_mounth">'.nb2month($m).'<span class="imgMenuPlus"><img alt="Plus" src="templates/images/plus.png" /></span></span>
-						<ul id="sub_mois">
-							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=01">Janvier</a></li>
-							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=02">F&eacute;vrier</a></li>
-							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=03">Mars</a></li>
-							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=04">Avril</a></li>
-							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=05">Mai</a></li>
-							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=06">Juin</a></li>
-							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=07">Juillet</a></li>
-							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=08">Août</a></li>
-							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=09">Septembre</a></li>
-							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=10">Octobre</a></li>
-							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=11">Novembre</a></li>
-							<li><a href="?m=view_op&account='.$_GET['account'].'&mois=12">D&eacute;cembre</a></li>
+	echo '<section class="panel col-100">
+			<section class="panel-header">
+				<span><i class="fa fa-money"></i>'.$account_name.'</span>
+			</section>
+			<section class="panel-body">
+				<section class="panel-body-header">
+					<button class="button_mounth">
+						<ul id="mois">
+							<li><span id="current_mounth">'.nb2month($m).'<span class="imgMenuPlus"><img alt="Plus" src="templates/images/plus.png" /></span></span>
+								<ul id="sub_mois">
+									<li><a href="?m=view_op&account='.$_GET['account'].'&mois=01">Janvier</a></li>
+									<li><a href="?m=view_op&account='.$_GET['account'].'&mois=02">F&eacute;vrier</a></li>
+									<li><a href="?m=view_op&account='.$_GET['account'].'&mois=03">Mars</a></li>
+									<li><a href="?m=view_op&account='.$_GET['account'].'&mois=04">Avril</a></li>
+									<li><a href="?m=view_op&account='.$_GET['account'].'&mois=05">Mai</a></li>
+									<li><a href="?m=view_op&account='.$_GET['account'].'&mois=06">Juin</a></li>
+									<li><a href="?m=view_op&account='.$_GET['account'].'&mois=07">Juillet</a></li>
+									<li><a href="?m=view_op&account='.$_GET['account'].'&mois=08">Août</a></li>
+									<li><a href="?m=view_op&account='.$_GET['account'].'&mois=09">Septembre</a></li>
+									<li><a href="?m=view_op&account='.$_GET['account'].'&mois=10">Octobre</a></li>
+									<li><a href="?m=view_op&account='.$_GET['account'].'&mois=11">Novembre</a></li>
+									<li><a href="?m=view_op&account='.$_GET['account'].'&mois=12">D&eacute;cembre</a></li>
+								</ul>
+							</li>
 						</ul>
-					</li>
-				</ul>
-			</button></td>';//&nbsp;';
+					</button>';
 		if ($nb_unverif_op>0) {
-			echo '<td><button class="button_link"><a href="?m=unverif_op&account='.$_GET['account'].'">'.$nb_unverif_op.' op&eacute;ration';if ($nb_unverif_op>1) echo 's';echo ' en attente</a></button></td>';
+			echo '<button class="button_link"><a href="?m=unverif_op&account='.$_GET['account'].'">'.$nb_unverif_op.' op&eacute;ration';if ($nb_unverif_op>1) echo 's';echo ' en attente</a></button>';
 		}
-		echo '</tbody></table><br /><br />
+		echo '<br /><br />
 			<div class="conteneur_options">
 				Il y a <span class="info">'.$nb_op.'</span> op&eacute;ration';
 				if ($nb_op>1) echo 's';
@@ -180,6 +184,7 @@
 			echo '</tr>';
 	}
 	echo '</table>
+		</section>
 		<section id="wrapper_overLayer">
 			<section id="overLayer">
 				<section id="contentOverLayer">
