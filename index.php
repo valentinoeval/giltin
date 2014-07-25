@@ -74,6 +74,11 @@
 					</div>
 				</form>
 				<?php include('notice.php'); ?>
+				<ul>
+					<?php if ($_SESSION['rights']==-2 or $_SESSION['rights']==-1) : ?>
+						<li><a href="?m=admin">Administration</a></li>
+					<?php endif; ?>
+				</ul>
 			</div>
 			<footer><span>Giltin' &copy; 2013</span></footer>
 		</div>
