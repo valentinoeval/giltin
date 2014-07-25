@@ -12,13 +12,18 @@
 		header('location:index.php');
 	$action_src=array('signin', 'signout');
 	$action_print=array('Connexion', 'D&eacute;connexion');
-	echo '<h3>Liste des connexions relatives à votre compte</h3>
-		<table cellspacing="0" cellpadding="0" id="tList">
-			<tr id="tHeader">
-				<td>Date et heure</td>
-				<td>Action</td>
-				<td>Adresse IP</td>
-			</tr>';
+
+	echo '<section class="panel col-40">
+			<section class="panel-header">
+				<span><i class="fa fa-plus"></i>Liste des connexions relatives à votre compte</span>
+			</section>
+			<section class="panel-body">
+				<table cellspacing="0" cellpadding="0" id="tList">
+					<tr id="tHeader">
+						<td>Date et heure</td>
+						<td>Action</td>
+						<td>Adresse IP</td>
+					</tr>';
 	$x=0;
 	$logs_file='uploads/'.$_SESSION['login'].'/logs/logs';
 	if (file_exists($logs_file)) {
@@ -39,3 +44,6 @@
 		}
 		fclose($logs);
 	}
+			echo '</table>
+			</section>
+		</section>';
