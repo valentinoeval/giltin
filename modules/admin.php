@@ -127,7 +127,7 @@
 
 	<section class="panel col-20">
 		<section class="panel-header">
-			<span><i class="fa fa-plus"></i>Options</span>
+			<span><i class="fa fa-upload"></i>Options</span>
 		</section>
 		<section class="panel-body">
 			<section class="panel-body-content">
@@ -139,7 +139,7 @@
 
 <section class="panel col-30">
 	<section class="panel-header">
-		<span><i class="fa fa-plus"></i>Mettre &agrave; jour le num&eacute;ro de version</span>
+		<span><i class="fa fa-refresh"></i>Mettre &agrave; jour le num&eacute;ro de version</span>
 	</section>
 	<section class="panel-body">
 		<section class="panel-body-content">

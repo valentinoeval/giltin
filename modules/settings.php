@@ -73,7 +73,7 @@
 
 <section class="panel col-60">
 	<section class="panel-header">
-		<span><i class="fa fa-plus"></i>Ajouter un compte</span>
+		<span><i class="fa fa-list"></i>Ajouter un compte</span>
 	</section>
 	<section class="panel-body">
 		<table cellspacing="0" cellpadding="0" id="tList">

@@ -73,9 +73,9 @@
 			try {
 				$bddlog=new PDO($bdd, $bdduser, $bddmdp);
 
-				echo '<section class="panel col-60">
+				echo '<section class="panel col-30">
 						<section class="panel-header">
-							<span><i class="fa fa-database"></i>Liste de vos sauvegarde</span>
+							<span><i class="fa fa-database"></i>Faire une sauvegarde</span>
 						</section>
 						<section class="panel-body">
 							<section class="panel-body-header">
@@ -83,6 +83,13 @@
 									<button class="button_link"><a href="?m=export&dump=backup">Faire un backup de vos comptes</a></button>
 								</div>
 							</section>
+						</section>
+					</section>
+					<section class="panel col-60">
+						<section class="panel-header">
+							<span><i class="fa fa-database"></i>Liste de vos sauvegarde</span>
+						</section>
+						<section class="panel-body">
 					 		<table cellspacing="0" cellpadding="0" class="tList">
 								<tr class="tHeader">
 									<td>Nom du backup</td>
@@ -108,7 +115,8 @@
 							</td>
 						</tr>';
 				}
-					echo '</table>
+						echo '</table>
+						</section>
 					</section>
 					<section id="wrapper_overLayer">
 						<section id="overLayer">

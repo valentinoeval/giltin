@@ -15,7 +15,7 @@
 
 	echo '<section class="panel col-40">
 			<section class="panel-header">
-				<span><i class="fa fa-plus"></i>Liste des connexions relatives à votre compte</span>
+				<span><i class="fa fa-list"></i>Liste des connexions relatives à votre compte</span>
 			</section>
 			<section class="panel-body">
 				<table cellspacing="0" cellpadding="0" id="tList">
