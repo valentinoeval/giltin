@@ -75,7 +75,7 @@
 
 				echo '<section class="panel col-60">
 						<section class="panel-header">
-							<span><i class="fa fa-plus"></i>Liste de vos sauvegarde</span>
+							<span><i class="fa fa-database"></i>Liste de vos sauvegarde</span>
 						</section>
 						<section class="panel-body">
 							<section class="panel-body-header">
