@@ -110,12 +110,17 @@
 		</section>
 		<section class="panel-body">
 			<section class="panel-body-content">
-				<form action="?m=admin&section=new_user" method="post">
+				<form action="?m=admin&section=new_user" method="post" id="new_user">
 					<input type="text" name="login" placeholder="Nom d'utilisateur" /><br />
 					<input type="text" name="nom" placeholder="Pr&eacute;nom et nom de l'utilisateur" /><br />
-					<input type="email" name="email" placeholder="Adresse email" /><br />
-					<input type="submit" value="Ajouter" class="ajouter" />
+					<input type="email" name="email" placeholder="Adresse email" />
 				</form>
+			</section>
+		</section>
+		<section class="panel-footer">
+			<section class="panel-footer-content">
+				<button class="btn btn-submit" onclick="document.forms['new_user'].submit()">Ajouter</button>
+				<section class="clear"></section>
 			</section>
 		</section>
 	</section>
@@ -139,10 +144,15 @@
 	<section class="panel-body">
 		<section class="panel-body-content">
 			Version actuelle : <?php echo $version.'.'.$date.'.'.$num_release; ?><br /><br />
-			<form action="?m=admin&section=maj_version" method="post">
-				<input type="text" name="version" value="<?php echo $new_version; ?>" /><br />
-				<input type="submit" value="Mettre à jour" />
+			<form action="?m=admin&section=maj_version" method="post" id="maj_version">
+				<input type="text" name="version" value="<?php echo $new_version; ?>" />
 			</form>
+		</section>
+	</section>
+	<section class="panel-footer">
+		<section class="panel-footer-content">
+			<button class="btn btn-submit" onclick="document.forms['maj_version'].submit()">Mettre à jour</button>
+			<section class="clear"></section>
 		</section>
 	</section>
 </section>
