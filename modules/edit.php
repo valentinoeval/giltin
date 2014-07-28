@@ -20,7 +20,7 @@
 
 	$type=$_GET['type'];
 	$account=$_GET['account'];
-	$id=$_GET['id'];
+	$id=(isset($_GET['id']))?$_GET['id']:'';
 	if (!empty($_GET['action']))
 		$action=$_GET['action'];
 
@@ -116,7 +116,7 @@
 			}
 			break;
 		case 'account':
-			if ($action=='update') {
+			if (isset($action) and $action=='update') {
 				if (isset($_POST['nom']) and !empty($_POST['nom'])) {
 					//convertion des caractères spéciaux en code html
 					$nom=charSpec2code(strip_codes($_POST['nom']), 'convert');
@@ -129,13 +129,25 @@
 			elseif (!isset($action) or $action==null) {
 				$req=$bddlog->query('SELECT * FROM giltin_list_comptes WHERE id_user='.$_SESSION['id'].' AND id_compte='.$account);
 				$datas=$req->fetch(PDO::FETCH_ASSOC);
-				echo '
-					<h3>Modification du compte</h3>
-					<form action="?m=edit&type=account&action=update" method="post">
-						<input type="text" name="nom" placeholder="Nom du compte" value="'.$datas['nom'].'" /><br />
-						<input type="hidden" name="id_compte" value="'.$account.'" />
-						<input type="submit" value="Modifier" />
-					</form>';
+				echo '<section class="panel col-30">
+						<section class="panel-header">
+							<span><i class="fa fa-plus"></i>Modification du compte</span>
+						</section>
+						<section class="panel-body">
+							<section class="panel-body-content">
+								<form action="?m=edit&type=account&action=update" method="post" id="edit_account">
+									<input type="text" name="nom" placeholder="Nom du compte" value="'.$datas['nom'].'" /><br />
+									<input type="hidden" name="id_compte" value="'.$account.'" />
+								</form>
+							</section>
+						</section>
+						<section class="panel-footer">
+							<section class="panel-footer-content">
+								<button class="btn btn-submit" onclick="document.forms[\'edit_account\'].submit()">Modifier</button>
+								<section class="clear"></section>
+							</section>
+						</section>
+					</section>';
 			}
 			break;
 		default:

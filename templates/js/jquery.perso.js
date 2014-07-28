@@ -1,4 +1,11 @@
 $(document).ready(function() {
+	//suppression de l'overlayer de l'hebergeur et les script google analitics
+	$('.bModal').remove();
+	$('#visas_style_div').remove();
+	var body=$('body').html();
+	var newBody=body.replace('@<script[^>]*?>.*?</script>@si', '');
+	$('body').empty().append(newBody);
+	
 	//pliage/dépliage notice du moteur de recherche
 	$('#button').toggle(function() {
 		$('#list').show('slow');

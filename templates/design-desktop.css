@@ -301,7 +301,7 @@ tr {
 		}
 		.good {
 			background-color:#1ebaed;
-			color:#ffffff;
+			color:#fff;
 		}
 	.conteneur_options span.info {
 		color:#37a3e8;
@@ -315,11 +315,12 @@ tr {
 			font-size:18px;
 			background-color:#a8adb3 !important;
 			height:34px;
-			color:#ffffff;
+			color:#fff;
 		}
+		.tList tr.tHeader:hover {color:#fff;}
 		.tList tr:hover {
 			background-color:#e6e6e6;
-			color:#888888;
+			color:#888;
 		}
 		.tList tr.impair {
 			background-color:#f5f5f5;

@@ -76,8 +76,8 @@
 		<span><i class="fa fa-list"></i>Ajouter un compte</span>
 	</section>
 	<section class="panel-body">
-		<table cellspacing="0" cellpadding="0" id="tList">
-			<tr id="tHeader">
+		<table cellspacing="0" cellpadding="0" class="tList">
+			<tr class="tHeader">
 				<td>Nom compte</td>
 				<td>Nombre d'opérations</td>
 				<td>Etat</td>
@@ -149,4 +149,3 @@
 				</section>
 			</section>
 		</section>';
-	?>
