@@ -154,26 +154,30 @@
 			$email=$datas['email'];
 			$lang=lang($datas['lang']);
 
-			echo '
-				<section class="tablet tablet_user">
-					<img src="templates/images/clip.png" class="clip_task" /><br /><br />
-					<button class="button_link"><a href="?m=user&section=edit_user">Modifiez vos informations</a></button>&nbsp;
-					<button class="button_link"><a href="?m=gallery">Visitez votre galerie d\'avatars</a></button>&nbsp;
-					<button class="button_link"><a href="?m=view_logs">Suivi des connexions</a></button><br /><br />
-					<section id="list_infos_user_container">
-						<ul id="list_infos_user">
-							<li id="login">'.$nom.'</li>
-							<li id="rights">'.$rights.'</li>
-							<li id="email">'.$email.'</li>
-							<li id="lang">'.$lang.'</li>
-						</ul>
+			echo '<section class="panel col-100">
+					<section class="panel-header">
+						<span><i class="fa fa-history"></i>Mes informations</span>
 					</section>
-					<section id="tablet_user_avatar">
-						<section id="tablet_user_avatar_container">
-							<img src="'.$avatar.'" />
+					<section class="panel-body">
+						<section class="panel-body-content">
+							<button class="button_link"><a href="?m=user&section=edit_user">Modifiez vos informations</a></button>&nbsp;
+							<button class="button_link"><a href="?m=gallery">Visitez votre galerie d\'avatars</a></button>&nbsp;
+							<button class="button_link"><a href="?m=view_logs">Suivi des connexions</a></button><br /><br />
+							<section id="list_infos_user_container">
+								<ul id="list_infos_user">
+									<li id="login">'.$nom.'</li>
+									<li id="rights">'.$rights.'</li>
+									<li id="email">'.$email.'</li>
+									<li id="lang">'.$lang.'</li>
+								</ul>
+							</section>
+							<section id="tablet_user_avatar">
+								<section id="tablet_user_avatar_container">
+									<img src="'.$avatar.'" />
+								</section>
+							</section>
 						</section>
 					</section>
-					<section class="clear"></section><br />
 				</section>';
 			break;
 	}
