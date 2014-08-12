@@ -114,34 +114,37 @@
 
 			}
 			else {
-				$avatar=$_SESSION['avatar'];
+				//$avatar=$_SESSION['avatar'];
 				$nom=$_SESSION['nom'];
 				$email=$_SESSION['email'];echo $action;
-				echo '
-					<section class="tablet tablet_user">
-						<img src="templates/images/clip.png" class="clip_task" /><br /><br />
-						<section id="list_infos_user_container">
-							<form action="?m=user&section=edit_user&action=update" method="post" enctype="multipart/form-data">
-								Avatar :<br />
-								<input type="file" name="avatar" /><br />
-								<input type="text" name="nom" placeholder="Pr&eacute;nom Nom" value="'.$nom.'" /><br />
-								<input type="password" name="password" placeholder="Mot de passe" /><br />
-								<input type="password" name="passverif" placeholder="V&eacute;rification mot de passe" /><br />
-								<input type="email" name="email" placeholder="Email" value="'.$email.'" /><br />
-								<select name="lang">';
-									foreach ($list_langs as $code => $nom) {
-										echo '<option value="'.$code.'">'.$nom.'</option>';
-									}
-								echo '</select><br />
-								<input type="submit" value="Modifier" />
-							</form>
+				echo '<section class="panel col-30">
+						<section class="panel-header">
+							<span><i class="fa fa-money"></i>Editez vos informations</span>
 						</section>
-						<section id="tablet_user_avatar">
-							<section id="tablet_user_avatar_container">
-								<img src="'.$avatar.'" />
+						<section class="panel-body">
+							<section class="panel-body-content">
+								<!--img src="'.$avatar.'" /><br /><br /-->
+								<form action="?m=user&section=edit_user&action=update" method="post" enctype="multipart/form-data" id="edit_user">
+									Avatar :<br />
+									<input type="file" name="avatar" /><br />
+									<input type="text" name="nom" placeholder="Pr&eacute;nom Nom" value="'.$nom.'" /><br />
+									<input type="password" name="password" placeholder="Mot de passe" /><br />
+									<input type="password" name="passverif" placeholder="V&eacute;rification mot de passe" /><br />
+									<input type="email" name="email" placeholder="Email" value="'.$email.'" /><br />
+									<select name="lang">';
+										foreach ($list_langs as $code => $nom) {
+											echo '<option value="'.$code.'">'.$nom.'</option>';
+										}
+									echo '</select>
+								</form>
 							</section>
 						</section>
-						<section class="clear"></section><br />
+						<section class="panel-footer">
+							<section class="panel-footer-content">
+								<button class="btn btn-submit" onclick="document.forms[\'edit_user\'].submit()">Modifier</button>
+								<section class="clear"></section>
+							</section>
+						</section>
 					</section>';
 				}
 			break;

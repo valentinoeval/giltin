@@ -3,3 +3,4 @@ test/
 kvs
 GIT_Giltin.doc
 templates/images/Thumbs.db
+.DS_Store

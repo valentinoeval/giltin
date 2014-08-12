@@ -1,4 +1,6 @@
 <?php
+	ini_set('display_errors', 1); 
+	error_reporting(E_ALL); 
 	//sécurisation du module
 	if (file_exists('uploads/'.$_SESSION['login'].'/key')) {
 		if (file_get_contents('uploads/'.$_SESSION['login'].'/key', NULL, NULL, 0, 100)==$_SESSION['key']) {
@@ -26,24 +28,24 @@
 				$ad_date=date("d/m/Y H:i:s", time()+$decalage_h);
 				//création du fichier de dump
 				$name_file='comptes_'.date("Y-m-d_H-i-s", time()+$decalage_h).'_manu';
-				$file=fopen('uploads/'.$_SESSION['login'].'/dumps/'.$name_file.'.sql', 'w+');
+				$file=fopen('uploads/'.$_SESSION['login'].'/dumps/'.$name_file, 'w+');
 
 				//requete pour récupéré toutes les lignes de la bdd
 				$req1=$bddlog->query('SELECT * FROM giltin_comptes_'.$_SESSION['id']);
 
 				//écriture de toutes les opération du ccp
 				while ($datas1=$req1->fetch(PDO::FETCH_ASSOC)) {
-					fputs($file, "INSERT INTO `giltin_comptes_".$_SESSION['id']."` VALUES (".$datas1['id'].", '".$datas1['id_compte']."', '".$datas1['nom']."', '".$datas1['categorie']."', '".$datas1['op_date']."', '".$datas1['type']."', ".$datas1['montant'].", ".$datas1['verif'].");\n");
+					fputs($file, $datas1['id']."$:$".$datas1['id_compte']."$:$".$datas1['nom']."$:$".$datas1['categorie']."$:$".$datas1['op_date']."$:$".$datas1['type']."$:$".$datas1['montant']."$:$".$datas1['verif']."\n");
 				}
 				fputs($file, "\n");
 				fclose($file);
 
 				//récupération de la taille du dump en bytes
-				$file_size_bytes=filesize('uploads/'.$_SESSION['login'].'/dumps/'.$name_file.'.sql');
+				$file_size_bytes=filesize('uploads/'.$_SESSION['login'].'/dumps/'.$name_file);
 				//taille du fichier adapter à l'unité de mesure qui convient
 				$file_size=human_file_size($file_size_bytes);
 				//ajout dans la table backup du dump de la base
-				$bddlog->exec('INSERT INTO `giltin_backups` VALUES ("", "'.$_SESSION['id'].'", "'.$name_file.'", "'.$ad_date.'", "'.$file_size.'")');
+				$bddlog->exec('INSERT INTO giltin_backups VALUES (NULL, '.$_SESSION['id'].', "'.$name_file.'", "'.$ad_date.'", "'.$file_size.'")');
 				header('location:?m=export&msg=backup_dump');
 			}
 			catch (PDOException $message) {

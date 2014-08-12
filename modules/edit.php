@@ -35,8 +35,8 @@
 							//convertion des caractères spéciaux en code html
 							$nom=charSpec2code(strip_codes($_POST['nom']), 'convert');
 							// s'il s'agit d'un calcul de solde précédent on identique que celui ci à été modifié en concaténant à la fin le suffixe (Corrigé)
-							if ($nom=="Solde pr&eacute;c&eacute;dent")
-								$nom.=" (Corrig&eacute;)";
+							if ($nom=='Solde pr&eacute;c&eacute;dent')
+								$nom.=' (Corrig&eacute;)';
 							//détermination du type d'opération
 							if (isset($_POST['slide']) and $_POST['slide']=='unChecked')
 								$type='c';
@@ -69,7 +69,7 @@
 					$checked='';
 				//bloquage du champ nom s'il s'agit du calcul automatique du solde précédent
 				if ($datas['nom']=='Solde pr&eacute;c&eacute;dent' or $datas['nom']=='Solde pr&eacute;c&eacute;dent (Corrig&eacute;)')
-					$disabled='disabled';
+					$readonly='readonly';
 				else
 					$disabled='';
 				echo '<section class="panel col-30">
@@ -79,7 +79,7 @@
 						<section class="panel-body">
 							<section class="panel-body-content">
 								<form action="?m=edit&type=op&action=update" method="post">
-									<input type="text" '.$disabled.' name="nom" placeholder="Nom de l\'op&eacute;ration bancaire" value="'.$datas['nom'].'" /><br />
+									<input type="text" '.$readonly.' name="nom" placeholder="Nom de l\'op&eacute;ration bancaire" value="'.$datas['nom'].'" /><br />
 									<select name="account">';
 										$i=1;
 										while ($datas2=$req2->fetch(PDO::FETCH_ASSOC)) {

@@ -232,8 +232,9 @@ tr {
 #mois li > ul {display:none; width:75px; position:absolute; background-color:#f9f9f9; text-align:left; margin-top:-1px; border-radius:0px 0px 3px 3px; border-bottom:2px solid #d8d8d8;}
 #mois li:hover > ul {/*display:block;*/}
 #mois li > ul li {height:28px; width:97px; line-height:28px; font-size:18px; margin-left:-40px; padding:0;}
-#mois li > ul li a {color:#909090; display:block; font-size:15px; width:100%; padding:0 8px 0 10px;}
+#mois li > ul li a {color:#909090; display:block; font-size:15px; width:100%; padding:0 8px 0 10px; text-decoration:none;}
 #mois li:hover > ul li a:hover {color:#ffffff; background-color:#a0a0a0}
+#sub_mois {display:none;}
 
 #barLeft {
 	width:250px;

@@ -29,13 +29,13 @@ $(document).ready(function() {
 
 	//fermeture du bloc du message
 	$('#close_msg').click(function() {
-		$('.msg_good').hide();
+		$('.msg_good').slideUp('slow');
 		setTimeout(function() {$('.msg_good').remove();}, 500);
-		$('.msg_bad').hide('slow');
+		$('.msg_bad').slideUp('slow');
 		setTimeout(function() {$('.msg_bad').remove();}, 500);
 	});
-	setTimeout(function() {$('.msg_good').hide('slow');}, 5000);
-	setTimeout(function() {$('.msg_bad').hide('slow');}, 5000);
+	setTimeout(function() {$('.msg_good').slideUp('slow');}, 5000);
+	setTimeout(function() {$('.msg_bad').slideUp('slow');}, 5000);
 
 	//animation du changement d'opération simple/virement
 	$('#squared').click(function() {
@@ -75,22 +75,13 @@ $(document).ready(function() {
 	});
 
 	//affichage de la liste de mois de l'année lors du clique sur le bouton
-	$('.button_mounth').toggle(function() {
-		$('#sub_mois').css({'display' : 'block'});
-		$('#current_mounth img').css({
-			"-webkit-transform" : "rotate(-180deg)",
-			"-moz-transform" : "rotate(-180deg)",
-			"-o-transform" : "rotate(-180deg)",
-			"transform" : "rotate(-180deg)"
-		});
-	}, function() {
-		$('#sub_mois').css({'display' : 'none'});
-		$('#current_mounth img').css({
-			"-webkit-transform" : "rotate(0deg)",
-			"-moz-transform" : "rotate(0deg)",
-			"-o-transform" : "rotate(0deg)",
-			"transform" : "rotate(0deg)"
-		});
+	$('.button_mounth').click(function() {
+		if ($('#sub_mois').css('display')=='none') {
+			$('#sub_mois').css({'display' : 'block'});
+		}
+		else {
+			$('#sub_mois').css({'display' : 'none'});
+		}
 	});
 
 	//système rétractation de la barre de gauche

@@ -296,7 +296,8 @@
 
 	//vérification de la validité de l'adresse email
 	function emailValidation($adresse) { 
-		$syntaxe='#^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$#'; 
+		//$syntaxe='#^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$#';
+		$syntaxe='^[0-9a-z._-]+@{1}[0-9a-z.-]{2,}[.]{1}[a-z]{2,5}$';
 		if (preg_match($syntaxe,$adresse)) 
 			return true; 
 		else 
