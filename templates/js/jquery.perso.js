@@ -29,13 +29,13 @@ $(document).ready(function() {
 
 	//fermeture du bloc du message
 	$('#close_msg').click(function() {
-		$('.msg_good').slideUp('slow');
+		$('.msg_good').hide('slow');
 		setTimeout(function() {$('.msg_good').remove();}, 500);
-		$('.msg_bad').slideUp('slow');
+		$('.msg_bad').hide('slow');
 		setTimeout(function() {$('.msg_bad').remove();}, 500);
 	});
-	setTimeout(function() {$('.msg_good').slideUp('slow');}, 5000);
-	setTimeout(function() {$('.msg_bad').slideUp('slow');}, 5000);
+	setTimeout(function() {$('.msg_good').hide('slow');}, 5000);
+	setTimeout(function() {$('.msg_bad').hide('slow');}, 5000);
 
 	//animation du changement d'opération simple/virement
 	$('#squared').click(function() {
